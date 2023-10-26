@@ -8,9 +8,9 @@ repo_url: https://github.com/WWmore/mkdocs-archgeo
 
 theme: 
   name: material
-  logo: assets/logo.png
   favicon: assets/logo.png
   icon:
+    logo: assets/logo.png
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
@@ -46,6 +46,10 @@ theme:
 
 plugins:
   - social
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
 
 extra:
   social:
