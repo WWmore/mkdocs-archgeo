@@ -1,8 +1,14 @@
-# Homepage
+# Home
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+# Installation
+
+# Structure
+
+# Visualization
+
+# Tutorial
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
@@ -19,6 +25,8 @@ def mesh()
 import scipy
 def optimization()
 ```
+
+# Docs
 
 #### With a title
 ```py title="meshpy.py"
@@ -45,7 +53,7 @@ def bubble_sort(items):
 
 
 
-## Icons and Emojs
+# About
 
 :smile: 
 

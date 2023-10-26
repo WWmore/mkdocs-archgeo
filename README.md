@@ -1,8 +1,9 @@
 
-# ![Alt text](https://raw.githubusercontent.com/wwmore/mkdocs-archgeo/docs/assets/AG.png?raw=true) ArchGeo
+# ![Alt text](docs/assets/AG.png) ArchGeo
 
 <p align="center">
-  <a href="https://www.huiwang.me/mkdocs-archgeo/">
-    <img src="https://raw.githubusercontent.com/wwmore/mkdocs-archgeo/master/.github/assets/gif.gif" width="80" alt="Documentation for ArchGeo">
+  <a href="https://github.com/WWmore/mkdocs-archgeo/blob/ad15130bcc6e128397c5f4e8e8064decfe801e72/docs/assets/gif.gif" width="80" alt="Documentation for ArchGeo">
   </a>
 </p>
+
+
