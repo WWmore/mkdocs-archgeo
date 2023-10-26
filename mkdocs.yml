@@ -1,5 +1,5 @@
 site_name: ArchGeo
-site_url: http://www.huiwang.me/mkdocs-archgeo/
+site_url: http://www.wwmore.github.io/mkdocs-archgeo/
 theme: 
   name: material
   features:
@@ -36,7 +36,7 @@ extra:
       link: https://github.com/WWmore
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/HuiWang34957044
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/house-user
       link: https://www.huiwang.me/hwang/
 
 markdown_extensions:
