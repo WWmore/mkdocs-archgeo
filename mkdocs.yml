@@ -35,7 +35,7 @@ extra:
       link: https://github.com/WWmore
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/HuiWang34957044
-    - icon: ellipse.png
+    - icon: fontawesome/brands/twitter
       link: https://www.huiwang.me/hwang/
 
 markdown_extensions:
