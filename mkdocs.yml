@@ -14,12 +14,13 @@ theme:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - navigation.footer
     - navigation.indexes
     - navigation.tracking
+    - navigation.path
+    - navigation.expand
     - search.suggest
     - search.highlight
     - search.share
@@ -27,7 +28,6 @@ theme:
     - content.code.annotation
     - content.code.copy
     - toc.follow
-    - toc.integrate
 
   language: en
   palette:
