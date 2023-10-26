@@ -1,4 +1,5 @@
 site_name: ArchGeo
+site_url: https://www.huiwang.me/mkdocs-archgeo/
 theme: 
   name: material
   features:
@@ -17,14 +18,14 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-      primary: teal
-      accent: purple 
+      primary: lime
+      accent: deep purple
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
       primary: teal
-      accent: lime
+      accent: orange
 
 plugins:
   - social
