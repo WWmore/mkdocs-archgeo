@@ -3,12 +3,11 @@ site_url: https://www.huiwang.me/mkdocs-archgeo/
 site_author: Hui Wang
 
 # Repository
-repo_name: wwmore/mkdocs-archgeo
+repo_name: WWmore/mkdocs-archgeo
 repo_url: https://github.com/WWmore/mkdocs-archgeo
 
 theme: 
   name: material
-  custom_dir: material/overrides
   logo: assets/logo.png
   favicon: assets/logo.png
   icon:
