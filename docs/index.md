@@ -1,19 +1,30 @@
-# Home
+## Home
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-# Installation
+## Installation
 
-# Structure
+## Structure
 
-# Visualization
+### Project layout
 
-# Tutorial
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+## Visualization
+
+## Tutorial
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
+
+
+## Docs
+
 
 ```
 import numpy as np
@@ -25,8 +36,6 @@ def mesh()
 import scipy
 def optimization()
 ```
-
-# Docs
 
 #### With a title
 ```py title="meshpy.py"
@@ -44,16 +53,8 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
-
-# About
+## About
 
 :smile: 
 
