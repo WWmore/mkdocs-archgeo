@@ -8,8 +8,8 @@ repo_url: https://github.com/WWmore/mkdocs-archgeo
 
 theme: 
   name: material
-  favicon: assets/favicon.png
-  logo: logo
+  favicon: assets/AG.png
+  logo: assets/logo.png
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
