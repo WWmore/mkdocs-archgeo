@@ -9,7 +9,7 @@ repo_url: https://github.com/WWmore/mkdocs-archgeo
 theme: 
   name: material
   favicon: assets/AG.png
-  logo: assets/logo.png
+  logo: assets/gif_trans.gif
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
@@ -33,15 +33,15 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/weather-sunny 
         name: Switch to dark mode
-      primary: lime
+      primary: cyan
       accent: deep purple
     - scheme: slate 
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to light mode    
-      primary: green
+      primary: teal
       accent: orange
 
 plugins:
