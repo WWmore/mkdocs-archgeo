@@ -10,7 +10,7 @@ theme:
   name: material
   favicon: assets/logo.png
   icon:
-    logo: assets/logo.png
+    logo: assets/logo
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
