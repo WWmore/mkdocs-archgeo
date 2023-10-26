@@ -1,17 +1,35 @@
 site_name: ArchGeo
 site_url: https://www.huiwang.me/mkdocs-archgeo/
+site_author: Hui Wang
+
+# Repository
+repo_name: wwmore/mkdocs-archgeo
+repo_url: https://github.com/WWmore/mkdocs-archgeo
+
 theme: 
   name: material
+  custom_dir: material/overrides
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
   features:
     - navigation.tabs
     - navigation.sections
-    - toc.integrate
     - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
     - search.suggest
     - search.highlight
+    - search.share
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - toc.follow
+    - toc.integrate
+
   language: en
   palette:
     - scheme: default
@@ -24,7 +42,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
-      primary: teal
+      primary: green
       accent: orange
 
 plugins:
