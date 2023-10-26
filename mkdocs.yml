@@ -1,4 +1,5 @@
 site_name: ArchGeo
+site_url: http://www.huiwang.me/mkdocs-archgeo/
 theme: 
   name: material
   features:
