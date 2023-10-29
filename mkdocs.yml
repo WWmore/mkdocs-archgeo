@@ -49,8 +49,8 @@ plugins:
   - social
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - bibtex:
-      bib_file: assets/refs.bib
+  # - bibtex:
+  #     bib_file: assets/refs.bib
 
 extra:
   social:
