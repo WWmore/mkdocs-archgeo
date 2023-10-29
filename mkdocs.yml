@@ -3,14 +3,15 @@ site_url: https://www.huiwang.me/mkdocs-archgeo/
 site_author: Hui Wang
 
 # Repository
-repo_name: WWmore/mkdocs-archgeo
-repo_url: https://github.com/WWmore/mkdocs-archgeo
+repo_name: WWmore/DOS
+repo_url: https://github.com/WWmore/DOS
 
 theme: 
   name: material
   favicon: assets/AG.png
   logo: assets/gif_trans.gif
   icon:
+    repo: fontawesome/brands/github-alt
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
@@ -48,6 +49,8 @@ plugins:
   - social
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - bibtex:
+      bib_file: assets/refs.bib
 
 extra:
   social:
