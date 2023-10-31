@@ -15,7 +15,6 @@ theme:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
   features:
-    - navigation.sections
     - navigation.top
     - navigation.footer
     - navigation.indexes
