@@ -2,7 +2,7 @@
 
 ArchGeo provides an interactive design GUI environment, which is based on the Mayavi library. 
 
-![File](assets/mayavi.png)
+![File](../assets/mayavi.png)
 
 
 ## Mayavi

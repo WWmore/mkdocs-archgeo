@@ -1,4 +1,4 @@
-# Docs
+# Python Functions
 
 
 * `mkdocs new [dir-name]` - Create a new project.
