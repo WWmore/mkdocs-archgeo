@@ -20,7 +20,6 @@ theme:
     - navigation.indexes
     - navigation.tracking
     - navigation.path
-    - navigation.expand
     - search.suggest
     - search.highlight
     - search.share
