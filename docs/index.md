@@ -29,6 +29,9 @@ Compared with triangular meshes, quad meshes have the following good features:
 * can have torsion-free structure
 * have nice geometry theory in discretization of (smooth) differential geometry
 
+## Half-edge data structure
+Our core processing object is (quad) mesh. We use the popular [half-edge data structure](https://cs184.eecs.berkeley.edu/sp20/article/17/an-introduction-to-half-edge-dat) to represent the geometric relations between vertices.
+
 ## Architectural Geometry
 
 The research area of **Architectural Geometry** traces back to the research paper ["Geometric modeling with conical meshes and developable surfaces"](https://doi.org/10.1145/1141911.1141941) [1] in 2006 by Prof. Helmut Pottmann and colleagues. 
