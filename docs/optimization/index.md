@@ -5,9 +5,6 @@ ArchGeo provides an optimization framework to solve geometry processing problems
 It utilizes a Gauss-Newton algorithm, so-called Guided Projection Algorithm as dissused in the paper ["Form-finding with polyhedral meshes made simple"](https://doi.org/10.1145/2601097.2601213), to produce constrained quadmesh models.
 
 
-## Guided Projection Algorithm
-
-
 <details>
 <summary><span style="font-weight: bold;">Abstract of the paper 'Form-finding with Polyhedral Meshes Made Simple'</span></summary>
 
@@ -15,4 +12,7 @@ It utilizes a Gauss-Newton algorithm, so-called Guided Projection Algorithm as d
 
 </details>
 <br>
+
+
+## Guided Projection Algorithm
 

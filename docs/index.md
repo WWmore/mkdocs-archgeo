@@ -15,7 +15,9 @@ ArchGeo offers four core features:
 * Fast interactive design.
 
 ## Triangular meshes
-Triangular meshes are the most commonly uses meshes in geometry processing. Each face is planar. **Regular** triangular mesh has all the vertices of valence 6.
+Triangular meshes are the most commonly used meshes in geometry processing, since they can explicitly represent the model shape.
+Other good properties include planar faces and simplier way to store triangular faces in data structure compared with other polygon faces. 
+**Regular** triangular mesh has all the vertices of valence 6.
 
 ## Why quad meshes?
 Quad meshes are extensively used in animation, architectural designs, and industrial analysis.
