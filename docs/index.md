@@ -15,10 +15,11 @@ ArchGeo offers four core features:
 * Fast interactive design.
 
 ## Triangular meshes
-Triangular meshes are the most commonly used meshes in geometry processing, since they can explicitly represent the model shape.
-Other good properties include planar faces and simplier way to store triangular faces in data structure compared with other polygon faces. 
+Triangular meshes are the most commonly used meshes in geometry processing and computer graphics, since they can explicitly represent the model shape.
+Other good properties include representing flat surfaces efficiently, allocating more faces to the areas with fine detail, easily attaching  data (e.g. RGB colors, texture coordinates, normal vectors, etc.) on vertices and interpolating over the whole surface, and simplier way to store triangular faces in data structure compared with other polygon faces. 
+
 **Regular** triangular mesh has all the vertices of valence 6.
-Three angles of 60 degrees corresponds to equilateral triangles, which are the most preferred but very limited ones in freeform shape. 
+Three angles of 60 degrees corresponds to equilateral triangles, which are the most visually preferred but very limited ones in freeform shape. 
 Skinny triangles with more extreme angles are not ideal in both geometry processing and industrial applications.
 
 ## Why quad meshes?
