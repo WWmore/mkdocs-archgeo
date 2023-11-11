@@ -14,5 +14,21 @@ It utilizes a Gauss-Newton algorithm, so-called Guided Projection Algorithm as d
 <br>
 
 
+For the Chinese explaination, please refer to the Section 3.7 in the PhD thesis [建筑几何中的网格与光滑曲面构造](https://www.huiwang.me/assets/pdf/hui-phd-thesis.pdf).
+
 ## Guided Projection Algorithm
+
+
+
+### Hard constraints
+
+
+List of variables.
+
+
+### Soft constraints
+
+Fairness term is a simple and very efficient soft constraint. It plays a very important role to smooth the polylines in visual appearance.
+
+### Sparse matrix construction
 
