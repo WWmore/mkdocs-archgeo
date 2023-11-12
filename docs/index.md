@@ -50,10 +50,17 @@ In 2015, a survey paper titled ["Architectural geometry"](https://doi.org/10.101
 This area, which combines theory and application, is still active with many researchers dedicated to advancing its development.
 
 
-[1] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.
+-----------------------------------------------------------
+<span style="font-family:Papyrus; font-size:2em;">[1] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.</span>
+
+<span style="font-family:Papyrus; font-size:2em;">[2] Helmut Pottmann, Andreas Asperl, Axel Kililan. 2007. Architectural geometry. Bentley Institute Press.</span>
+
+<span style="font-family:Papyrus; font-size:2em;">[3] Helmut Pottmann, Michael Eigensatz, Amir Vaxman, Johannes Wallner. 2015. Architectural geometry. Computers & Graphics. 47, 145--164.</span>
+
+<!-- [1] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.
 
 [2] Helmut Pottmann, Andreas Asperl, Axel Kililan. 2007. Architectural geometry. Bentley Institute Press.
 
-[3] Helmut Pottmann, Michael Eigensatz, Amir Vaxman, Johannes Wallner. 2015. Architectural geometry. Computers & Graphics. 47, 145--164.
+[3] Helmut Pottmann, Michael Eigensatz, Amir Vaxman, Johannes Wallner. 2015. Architectural geometry. Computers & Graphics. 47, 145--164. -->
 
 
