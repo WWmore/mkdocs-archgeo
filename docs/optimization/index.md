@@ -19,7 +19,7 @@ For the Chinese explaination, please refer to the Section 3.7 in the [PhD thesis
 ## Guided Projection Algorithm
 
 Guided Projection Algorithm solves the geometry optimization problem by representing all the constraints to be equations with no more than quadratic degrees.
-Suppose we have $N$ constraints, then there exist symmetric matrices $A_i$, vectors $b_i$ and constants $c_i$ such that all the constraints can be represented as
+If there are $N$ constraints, then there exist symmetric matrices $A_i$, vectors $b_i$ and constants $c_i$ such that all the constraints can be represented in the following form
 
 $$
 \varphi_i(X) = \frac{1}{2}X^T A_i X + b_i^T X +c_i = 0, i=1,\cdots,N,
@@ -28,10 +28,10 @@ $$
 where $X$ is a vector including all variables.
 
 $X$ can be extended once more geometry constraints are added. 
-Additional variables as auxiliary variables may be appened into $X$ when lowering higher (more than quadratic) equations to at-most quadratic ones, which needs geometric understandings.
-The whole optimization is an iterative process so as to get the satisfied solver $X$. 
+Additional variables as auxiliary variables may be added into $X$ when lowering higher order (more than quadratic) equations to at-most quadratic equations, which requires geometric understanding.
+The whole optimization is an iterative process until a satisfied solver $X$ is obtained. 
 
-Suppose the solver in the last iteration is $X_n$, we linearize the above equations by Taylor expansion
+Suppose the solver in the last iteration is $X_n$, above equations can be linearized using Taylor expansion
 
 $$
 \varphi_i(X) \thickapprox \varphi_i(X_n) + \nabla \varphi_i(X_n)^T(X-X_n) = 0, i=1,\cdots,N,
@@ -48,10 +48,10 @@ which can be written as $H \cdot X  = r$, where
 \end{array}\right]
  =
 \left[\begin{array}{cc}
-(a_1\cdot X+b_1)^{T}\\
-(a_2\cdot X+b_2)^{T}\\
+(A_1\cdot X+b_1)^{T}\\
+(A_2\cdot X+b_2)^{T}\\
 \vdots \\
-(a_N\cdot X+b_N)^{T}
+(A_N\cdot X+b_N)^{T}
 \end{array}\right],
 \]
 
@@ -65,10 +65,10 @@ r =
 \end{array}\right]
 =
 \left[\begin{array}{cc}
-\frac{1}{2}\cdot X^T\cdot a_1\cdot X - c_1\\
-\frac{1}{2}\cdot X^T\cdot a_2\cdot X - c_2\\
+\frac{1}{2}\cdot X^T\cdot A_1\cdot X - c_1\\
+\frac{1}{2}\cdot X^T\cdot A_2\cdot X - c_2\\
 \vdots \\
-\frac{1}{2}\cdot X^T\cdot a_{N}\cdot X -c_N
+\frac{1}{2}\cdot X^T\cdot A_{N}\cdot X -c_N
 \end{array}\right].
 \]
 
@@ -81,7 +81,7 @@ Then we solve
 \|HX - r\|^2 + \|KX - s\|^2 + \epsilon^2\|X - X_n\|^2 \to min ,
 \]
 
-where $\|KX - s\|$ and $\|X - X_n\|$ are regularizers and $\epsilon=0.001$ for almost all the optimization cases.
+where $\|KX - s\|$ and $\|X - X_n\|$ are regularizers, and $\epsilon=0.001$ for almost all the optimization cases.
 
 Furthermore, we only solve the linear system
 
@@ -89,10 +89,8 @@ Furthermore, we only solve the linear system
 (H^T H +  K^T K + \epsilon^2 I)X = H^T r +  K^T s + \epsilon^2 X_N,
 \]
 
-which can be solved fast by the `SciPy` [sparse matrix solver](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html#scipy.sparse.linalg.spsolve).
+which can be solved fast by the [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html#scipy.sparse.linalg.spsolve) sparse matrix solver.
 In this codebase, we use [PyPardiso](https://pypi.org/project/pypardiso/) to increase the computing.
-
-
 
 
 
@@ -102,15 +100,18 @@ In this codebase, we use [PyPardiso](https://pypi.org/project/pypardiso/) to inc
 List of variables.
 
 
-### Soft constraints
+### Fairness term
 
-Fairness term $\|KX - s\|$ is a simple and very efficient soft constraint. It plays a very important role to smooth the polylines in visual appearance.
+The fairness term $\|KX - s\|$ is a simple and efficient soft constraint that plays a crucial role in smoothing out polylines in visual appearance.
+Soft constraints typically have smaller and controllable weights compared to hard constraints. 
 
-Different from the smoothness of triangular vertices by using Laplacian fairness,
-we care more about the smoothness of polylines.
+While the smoothness of vertices in triangular mesh is achieved using Laplacian fairness, the focus here is on the smoothness of polylines.
 
-For each vertex $v$ of valence 4 in a quad mesh, let 4 neighbouring connected vertices be $v_i(i=1,\cdots,4)$ in clockwise, we use vanishing second order differences to represent the smoothness of any three consecutive vertices
-$$v_1 -2 v + v_3=0, v_2 -2 v + v_4=0.$$
+For each vertex $v$ of valence 4 in a quad mesh, we consider 4 neighbouring connected vertices be $v_i(i=1,\cdots,4)$ in clockwise order and use vanishing second order differences to represent the smoothness of any three consecutive vertices
+
+$$
+v_1 -2 v + v_3=0, v_2 -2 v + v_4=0.
+$$
 
 ### Sparse matrix construction
 
