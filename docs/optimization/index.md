@@ -117,39 +117,36 @@ $$
 (v_1 - v_3)^2 - (v_2 - v_4)^2 = 0 \Longleftrightarrow v_1^2 - v_2^2 + v_3^2 - v_4^2 - 2 v_1 v_3 + 2 v_2 v_4 = 0
 $$
 
-Suppose the number of all vertices is $|V|$ and the number of all quad faces is $|F|$, then the number of all variables is $X = 3|V|$ and the number of hard constraints is $N = |F|$.
+Suppose the number of all vertices is $|V|$ and the number of all quad faces is $|F|$, then the number of all variables is $|X| = 3|V|$ and the number of hard constraints is $N = |F|$.
 
-\begin{table}
-\begin{tabular}{|l|l|l|}
-  \hline
-  \it{Variable} & \it{Symbol} & \it{Number}
-  \\ \hline
-  vertices
-  &
-  $v_i \in R^3$
-  &
-  $3 |V| $
-  \hline
-\end{tabular}
-\caption{\label{tab1}List of variables.}
-\end{table}
+| Variable     | Symbol          | Number     |
+| ------------ | --------------- | ---------- |
+| `vertices`   | $v_i \in R^3$   | $3 |V|$    |
 
-There is enough degree of freedom left for any orthogonal net.
-Later we add extra net properties on the orthogonal net to get special curve network.
-For example, the minimal net is defined as orthogonal asymptotic net, i.e. orthogonal A-net, which require additonal vertex normals added to variable $X$ and increased number $N$ of hard constraints.
+There is enough degree of freedom left for any orthogonal network.
+Later, we will incorporate additional properties on the orthogonal net to create specialized curve networks.
+For instance, the minimum net is an orthogonal asymptotic net, also known as an orthogonal A-net, which requires the addition of vertex normals to the variable $X$ and an increased number ($N$) of hard constraints.
 
 
 ### Sparse matrix construction
 
 In the codebase framework, we only need to fill the sparse matrix $H$ elements and vector $r$ of each constraint.
 
-For the orthogonality constraint, the sparse matrix $H$ is formed by:
+For the orthogonality constraint, array $r = (X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$, and the sparse matrix $H$ is formed by:
+
 * the shape is $(N, 3|V|)$
 * the array row = np.tile(np.arange($N$),12)
-* the array col = np.r_[$c1,c2,c3,c4$], where $ci$ are indices of $v_i$ coordinate in previous value $X_n$
-* the array data = 2*np.r_[$X_n[c1]-X_n[c3],X_n[c4]-X_n[c2],X_n[c3]-X_n[c1],X_n[c2]-X_n[c4]$]
+* the array col = np.r_[$col_1,col_2,col_3,col_4$], where $col_i$ are indices of $v_i$ coordinate in previous value $X_n$
+* the array data = 2*np.r_[$X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]$].
 
-and array $r = (X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$.
+| $H \cdot X  = r$  | Representation                                                                                     |
+| ----------------- | -------------------------------------------------------------------------------------------------- |
+| `H: shape`        | $(N, 3|V|)$                                                                                        |
+| `H: row`          | np.tile(np.arange($N$),12)                                                                         |
+| `H: col`          | np.r_[$col_1,col_2,col_3,col_4$]                                                                   |
+| `H: data`         | 2*np.r_[$X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]$] |
+| `r`               | $(X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$                                                    |
+
 
 This orthogonality constraint can be found in the function `DOS/archgeolab/constraints/constraints_basic.py/con_equal_length()`.
 
