@@ -93,13 +93,6 @@ which can be solved fast by the [SciPy](https://docs.scipy.org/doc/scipy/referen
 In this codebase, we use [PyPardiso](https://pypi.org/project/pypardiso/) to increase the computing.
 
 
-
-### Hard constraints
-
-
-List of variables.
-
-
 ### Fairness term
 
 The fairness term $\|KX - s\|$ is a simple and efficient soft constraint that plays a crucial role in smoothing out polylines in visual appearance.
@@ -113,5 +106,51 @@ $$
 v_1 -2 v + v_3=0, v_2 -2 v + v_4=0.
 $$
 
+
+### Hard constraints
+
+In the paper ["Discrete Orthogonal Structures"](https://doi.org/10.1016/j.cag.2023.05.024), the basic hard constraint is orthogonality of quad meshes, which is defined as equal diagonal lengths of each quad face.
+
+For each quad face with four vertices $v_i(i=1,\cdots,4)$ in clockwise order, two diagonal lengths $\|v_1 - v_3\|$ and $\|v_2 - v_4\|$ are equal, i.e.
+
+$$
+(v_1 - v_3)^2 - (v_2 - v_4)^2 = 0 \Longleftrightarrow v_1^2 - v_2^2 + v_3^2 - v_4^2 - 2 v_1 v_3 + 2 v_2 v_4 = 0
+$$
+
+Suppose the number of all vertices is $|V|$ and the number of all quad faces is $|F|$, then the number of all variables is $X = 3|V|$ and the number of hard constraints is $N = |F|$.
+
+\begin{table}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \it{Variable} & \it{Symbol} & \it{Number}
+  \\ \hline
+  vertices
+  &
+  $v_i \in R^3$
+  &
+  $3 |V| $
+  \hline
+\end{tabular}
+\caption{\label{tab1}List of variables.}
+\end{table}
+
+There is enough degree of freedom left for any orthogonal net.
+Later we add extra net properties on the orthogonal net to get special curve network.
+For example, the minimal net is defined as orthogonal asymptotic net, i.e. orthogonal A-net, which require additonal vertex normals added to variable $X$ and increased number $N$ of hard constraints.
+
+
 ### Sparse matrix construction
 
+In the codebase framework, we only need to fill the sparse matrix $H$ elements and vector $r$ of each constraint.
+
+For the orthogonality constraint, the sparse matrix $H$ is formed by:
+* the shape is $(N, 3|V|)$
+* the array row = np.tile(np.arange($N$),12)
+* the array col = np.r_[$c1,c2,c3,c4$], where $ci$ are indices of $v_i$ coordinate in previous value $X_n$
+* the array data = 2*np.r_[$X_n[c1]-X_n[c3],X_n[c4]-X_n[c2],X_n[c3]-X_n[c1],X_n[c2]-X_n[c4]$]
+
+and array $r = (X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$.
+
+This orthogonality constraint can be found in the function `DOS/archgeolab/constraints/constraints_basic.py/con_equal_length()`.
+
+More constraints representation can refer to the folder `DOS/archgeolab/constraints/`.
