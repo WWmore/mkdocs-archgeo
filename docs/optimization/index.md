@@ -121,7 +121,7 @@ Suppose the number of all vertices is $|V|$ and the number of all quad faces is 
 
 | Variable     | Symbol          | Number     |
 | ------------ | --------------- | ---------- |
-| `vertices`   | $v_i \in R^3$   | $3 |V|$    |
+| `vertices`   | $v_i \in R^3$   | $3|V|$     |
 
 There is enough degree of freedom left for any orthogonal network.
 Later, we will incorporate additional properties on the orthogonal net to create specialized curve networks.
@@ -132,20 +132,21 @@ For instance, the minimum net is an orthogonal asymptotic net, also known as an 
 
 In the codebase framework, we only need to fill the sparse matrix $H$ elements and vector $r$ of each constraint.
 
-For the orthogonality constraint, array $r = (X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$, and the sparse matrix $H$ is formed by:
+For the orthogonality constraint, 
+<!-- array $r = (X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$, and the sparse matrix $H$ is formed by:
 
 * the shape is $(N, 3|V|)$
 * the array row = np.tile(np.arange($N$),12)
 * the array col = np.r_[$col_1,col_2,col_3,col_4$], where $col_i$ are indices of $v_i$ coordinate in previous value $X_n$
-* the array data = 2*np.r_[$X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]$].
+* the array data = 2*np.r_[$X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]$]. -->
 
-| $H \cdot X  = r$  | Representation                                                                                     |
-| ----------------- | -------------------------------------------------------------------------------------------------- |
-| `H: shape`        | $(N, 3|V|)$                                                                                        |
-| `H: row`          | np.tile(np.arange($N$),12)                                                                         |
-| `H: col`          | np.r_[$col_1,col_2,col_3,col_4$]                                                                   |
-| `H: data`         | 2*np.r_[$X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]$] |
-| `r`               | $(X_n[c1] - X_n[c3])^2 - (X_n[c2] - X_n[c4])^2$                                                    |
+| $H \cdot X  = r$  | Representation                                                                               |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| `H: shape`        | $(N,3|V|)$                                                                                   |
+| `H: row`          | np.tile(np.arange($N$),12)                                                                   |
+| `H: col`          | $[col_1,col_2,col_3,col_4]$                                                                  |
+| `H: data`         | $2[X_n[col_1]-X_n[col_3],X_n[col_4]-X_n[col_2],X_n[col_3]-X_n[col_1],X_n[col_2]-X_n[col_4]]$ |
+| `r`               | $(X_n[col_1] - X_n[col_3])^2 - (X_n[col_2] - X_n[col_4])^2$                                  |
 
 
 This orthogonality constraint can be found in the function `DOS/archgeolab/constraints/constraints_basic.py/con_equal_length()`.
