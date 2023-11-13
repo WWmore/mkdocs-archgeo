@@ -20,7 +20,11 @@ For the Chinese explaination, please refer to the Section 3.7 in the [PhD thesis
 
 Guided Projection Algorithm solves the geometry optimization problem by representing all the constraints to be equations with no more than quadratic degrees.
 Suppose we have $N$ constraints, then there exist symmetric matrices $A_i$, vectors $b_i$ and constants $c_i$ such that all the constraints can be represented as
-$$\varphi_i(X) = \frac{1}{2}X^T A_i X + b_i^T X +c_i = 0, i=1,\cdots,N,$$
+
+$$
+\varphi_i(X) = \frac{1}{2}X^T A_i X + b_i^T X +c_i = 0, i=1,\cdots,N,
+$$
+
 where $X$ is a vector including all variables.
 
 $X$ can be extended once more geometry constraints are added. 
@@ -28,8 +32,13 @@ Additional variables as auxiliary variables may be appened into $X$ when lowerin
 The whole optimization is an iterative process so as to get the satisfied solver $X$. 
 
 Suppose the solver in the last iteration is $X_n$, we linearize the above equations by Taylor expansion
-$$\varphi_i(X) \thickapprox \varphi_i(X_n) + \nabla \varphi_i(X_n)^T(X-X_n) = 0, i=1,\cdots,N,$$
+
+$$
+\varphi_i(X) \thickapprox \varphi_i(X_n) + \nabla \varphi_i(X_n)^T(X-X_n) = 0, i=1,\cdots,N,
+$$
+
 which can be written as $H \cdot X  = r$, where 
+
 \[ H =
 \left[\begin{array}{cc}
 \nabla\varphi_1(X_{n})^T\\
@@ -43,7 +52,9 @@ which can be written as $H \cdot X  = r$, where
 (a_2\cdot X+b_2)^{T}\\
 \vdots \\
 (a_N\cdot X+b_N)^{T}
-\end{array}\right],\]
+\end{array}\right],
+\]
+
 \[
 r =
 \left[\begin{array}{cc}
@@ -65,15 +76,19 @@ We do not solve $H \cdot X  = r$ directly, since this linear system is typically
 Usually there is enough solution space, and we add fairness term (explained later) and 
 a controlled solver distance from the previous value $X_n$ as regularizers.
 Then we solve 
+
 \[
 \|HX - r\|^2 + \|KX - s\|^2 + \epsilon^2\|X - X_n\|^2 \to min ,
 \]
+
 where $\|KX - s\|$ and $\|X - X_n\|$ are regularizers and $\epsilon=0.001$ for almost all the optimization cases.
 
 Furthermore, we only solve the linear system
+
 \[
 (H^T H +  K^T K + \epsilon^2 I)X = H^T r +  K^T s + \epsilon^2 X_N,
 \]
+
 which can be solved fast by the `SciPy` [sparse matrix solver](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html#scipy.sparse.linalg.spsolve).
 In this codebase, we use [PyPardiso](https://pypi.org/project/pypardiso/) to increase the computing.
 
