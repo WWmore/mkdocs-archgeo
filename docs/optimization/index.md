@@ -119,9 +119,9 @@ $$
 
 Suppose the number of all vertices is $|V|$ and the number of all quad faces is $|F|$, then the number of all variables is $|X| = 3|V|$ and the number of hard constraints is $N = |F|$.
 
-| Variable     | Symbol          | Number            |
-| ------------ | --------------- | ----------------- |
-| `vertices`   | $v_i \in R^3$   | $3\vert V \vert$  |
+| Variable     | Symbol     | Number            |
+| ------------ | ---------- | ----------------- |
+| `vertices`   | $v\in R^3$ | $3\vert V \vert$  |
 
 There is enough degree of freedom left for any orthogonal network.
 Later, we will incorporate additional properties on the orthogonal net to create specialized curve networks.

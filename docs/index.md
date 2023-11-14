@@ -24,7 +24,7 @@ Skinny triangles with more extreme angles are not ideal in both geometry process
 
 ## Why quad meshes?
 Quad meshes are extensively used in animation, architectural designs, and industrial analysis.
-They are also majorly discussed objects with fruitful discrete theories in Discrete Differential Geometry (DDG).
+They are also majorly discussed objects with fruitful discrete theories in Discrete Differential Geometry (DDG) [1].
 
 Each vertex of a **regular** quad mesh has valence 4.
 
@@ -39,21 +39,25 @@ Our core processing object is (quad) mesh. We use the popular [half-edge data st
 
 ## Architectural Geometry
 
-The research area of **Architectural Geometry** traces back to the research paper ["Geometric modeling with conical meshes and developable surfaces"](https://doi.org/10.1145/1141911.1141941) [1] in 2006 by Prof. Helmut Pottmann and colleagues. 
+The research area of **Architectural Geometry** traces back to the research paper ["Geometric modeling with conical meshes and developable surfaces"](https://doi.org/10.1145/1141911.1141941) [2] in 2006 by Prof. Helmut Pottmann and colleagues. 
 
-In 2007, the book ["Architectural geometry"](http://www.architecturalgeometry.at/) [2] was published, and since then, numerous high-quality research papers have been presented in top conferences and journals every year. 
+In 2007, the book ["Architectural geometry"](http://www.architecturalgeometry.at/) [3] was published, and since then, numerous high-quality research papers have been presented in top conferences and journals every year. 
 
 In 2008, the first [Advances in Architectural Gometry](https://www.architecturalgeometry.org/aag08/) (AAG) conference was launched in Vienna, followed by many follow-up application papers in architecture, structure, CAD and CAM.
 
-In 2015, a survey paper titled ["Architectural geometry"](https://doi.org/10.1016/j.cag.2014.11.002) [3] presented the fruitful achievements of this research area and also listed some promising research directions. 
+In 2015, a survey paper titled ["Architectural geometry"](https://doi.org/10.1016/j.cag.2014.11.002) [4] presented the fruitful achievements of this research area and also listed some promising research directions. 
 
 This area, which combines theory and application, is still active with many researchers dedicated to advancing its development.
 
 
 -----------------------------------------------------------
-<span style="font-family:Papyrus; font-size:0.8em;">[1] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.</span>
-<span style="font-family:Papyrus; font-size:0.8em;">[2] Helmut Pottmann, Andreas Asperl, Axel Kililan. 2007. Architectural geometry. Bentley Institute Press.</span>
-<span style="font-family:Papyrus; font-size:0.8em;">[3] Helmut Pottmann, Michael Eigensatz, Amir Vaxman, Johannes Wallner. 2015. Architectural geometry. Computers & Graphics. 47, 145--164.</span>
+<span style="font-family:Papyrus; font-size:0.8em;">[1] Alexander Bobenko, Suris Yuri. 2008. Discrete differential geometry: Integrable structure. Vol. 98. American Mathematical Soc.</span>
+
+<span style="font-family:Papyrus; font-size:0.8em;">[2] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.</span>
+
+<span style="font-family:Papyrus; font-size:0.8em;">[3] Helmut Pottmann, Andreas Asperl, Axel Kililan. 2007. Architectural geometry. Bentley Institute Press.</span>
+
+<span style="font-family:Papyrus; font-size:0.8em;">[4] Helmut Pottmann, Michael Eigensatz, Amir Vaxman, Johannes Wallner. 2015. Architectural geometry. Computers & Graphics. 47, 145--164.</span>
 
 <!-- [1] Yang Liu, Helmut Pottmann, Johannes Wallner, Yongliang Yang, Wenping Wang. 2006. Geometric modeling with conical meshes and developable surfaces. ACM Trans. Graphics 25, 3, 681--689.
 
