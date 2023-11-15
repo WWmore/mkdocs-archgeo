@@ -6,6 +6,7 @@ Chinese explaination refers to the Section 3.2 in the [PhD thesis](https://www.h
 
 **S-net** refers to principal symmetric net [1-3], whose net tangent directions at each point are symmetric with respect to the principal curvature directions of the surface.
 It is a generalization of A-net and well studied in great detail in [1]. 
+
 The discretization of S-net is a quad mesh with spherical vertex stars for all vertices of valence 4, i.e. each vertex 
 $v$ and its 4 neighbouring connected vertices $v_{i},(i=1,\cdots,4)$ lie on a common sphere. 
 Then the 5 vertices satisfy the quadratic equations:
@@ -34,12 +35,12 @@ Let the number of vertex star of valence 4 is $|V_4|$, then the number of all va
 | ---------- | ----------- | ------------------ |
 | `vertices` | $v \in R^3$ | $3\vert V   \vert$ |
 | `centers`  | $o \in R^3$ | $3\vert V_4 \vert$ |
-| `radii`    | $r \in R$   | $ \vert V_4 \vert$ |
+| `radii`    | $r \in R$   | $\vert V_4 \vert$  |
 
 ## CMC-net
 
-CMC surface refers to surfaces of constant mean curvature, i.e. at each point the average of two extreme curvature is constant $
-(\kappa_1 + \kappa_2)/2=const.$
+CMC surface refers to surfaces of constant mean curvature, i.e. at each point the average of two extreme curvature is constant 
+$(k_1 + k_2)/2=const.$
 
 When a S-net is an orthogonal net and the spheres at the vertex stars have constant radius $r=const.$, the net is a CMC-net.
 
