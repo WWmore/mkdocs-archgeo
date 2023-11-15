@@ -26,6 +26,8 @@ The number of all variables is $|X| = 3|V| + 3|F|$ and the number of hard constr
 | `vertices`   | $v  \in R^3$ | $3\vert V \vert$ |
 | `normals`    | $f_n\in R^3$ | $3\vert F \vert$ |
 
+The function for PQ mesh is `DOS/archgeolab/constraints/constraints_basic.py/con_planarity_constraints()`.
+
 <!-- [![PQ](../assets/pq.png)](https://www.youtube.com/embed/m-CFC0XZ488) -->
 
 -----------------------------------------------------------
