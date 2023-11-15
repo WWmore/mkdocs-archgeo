@@ -1,5 +1,9 @@
 # Principal stress net
 
+## Definition
+
+## Constraint
+
 
 
 
