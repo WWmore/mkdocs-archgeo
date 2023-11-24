@@ -114,6 +114,7 @@ def plot_vectors(self, an, vn, name):
 
 ## Save data
 
+#### Save obj
 ``` py
 def save_obj(new_mesh, new_mesh_name, save_path):
     name = ('{}').format(new_mesh_name)  
@@ -122,6 +123,8 @@ def save_obj(new_mesh, new_mesh_name, save_path):
     print('\n\n NOTE: <'+new_mesh_name+'> mesh has been saved in <'+completeName+'>\n')
 ```
 
+
+#### Save csv
 ```py 
 def save_csv(vertices, name):
     ## save x, y, z list of the vertices list
