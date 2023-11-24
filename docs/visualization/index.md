@@ -14,7 +14,7 @@ Mayavi library provides Python code and example gallery of visulazation of point
 
 ## Read data
 
-### Open an obj file integrated with Mayavi
+#### Open an obj file
 ``` py
 ## Instantiate the sample component
 from opt_gui_orthonet import OrthoNet
@@ -40,6 +40,7 @@ GUI.start()
 
 ## Plot data
 
+#### Plot mesh
 ``` py
 from geometrylab.vtkplot.edgesource import Edges
 from geometrylab.vtkplot.facesource import Faces
@@ -49,31 +50,53 @@ def plot_mesh(self, mesh, name):
     self.meshmanager.add([showe, showf])
 ```
 
-``` py
-def plot_mesh_faces(self):
-    self.meshmanager.plot_faces(color='white',glossy=1,opacity=1)
-```
-
-``` py
-def hide_mesh_faces(self):
-    self.meshmanager.hide_faces()
-```
-
+#### Plot meshedges
 ``` py
 def plot_mesh_edges(self):
     self.meshmanager.plot_edges(color=(157,157,157),tube_radius=0.4*self.meshmanager.r)
 ```
 
+#### Hide meshedges
 ``` py
 def hide_mesh_edges(self):
     self.meshmanager.hide_edges()
 ```
 
+#### Plot colored edges
 ``` py
-def plot_points(self, Points, name):
-    self.meshmanager.plot_glyph(points=Points,color='yellow',glossy=1,radius=2*self.meshmanager.r,name=name)   
+def plot_colored_edges(self, poly, data, name):
+    val = np.max(data)*1.2
+    self.meshmanager.plot_polyline(polyline=poly,edge_data=data,color='Blues',lut_range=[0,val],tube_radius=1.2*self.meshmanager.r,name=name)       
 ```
 
+#### Plot meshfaces
+``` py
+def plot_mesh_faces(self):
+    self.meshmanager.plot_faces(color='white',glossy=1,opacity=1)
+```
+
+#### Hide meshfaces
+``` py
+def hide_mesh_faces(self):
+    self.meshmanager.hide_faces()
+```
+
+#### Plot colored faces
+``` py
+def plot_colored_faces(self, i_faces, name):
+    ## chosen indices of mesh faces are plotted differently from the left
+    data = np.zeros(self.mesh.F)
+    data[i_faces] = 1
+    self.meshmanager.plot_faces(face_data=data,color=[(8,45,130), (198,110,203)],opacity=[0,0.5],name=name)       
+```
+
+#### Plot colored points
+``` py
+def plot_points(self, Points, name):
+    self.meshmanager.plot_glyph(points=Points,color='brg',lut_range='-:0:+',radius=2*self.meshmanager.r,name=name)   
+```
+
+#### Plot polyline
 ``` py
 from geometrylab.geometry import Polyline
 def plot_polyline(self, Points, name):
@@ -81,20 +104,7 @@ def plot_polyline(self, Points, name):
     self.meshmanager.plot_polyline(poly,color=(138,43,226),glossy=1,tube_radius=0.5*self.meshmanager.r,name=name)
 ```
 
-``` py
-def plot_edges(self, poly, data, name):
-    val = np.max(data)*1.2
-    self.meshmanager.plot_polyline(polyline=poly,edge_data=data,color='Blues',lut_range=[0,val],tube_radius=1.2*self.meshmanager.r,name=name)       
-```
-
-``` py
-def plot_faces(self, i_faces, name):
-    ## chosen indices of mesh faces are plotted differently from the left
-    data = np.zeros(self.mesh.F)
-    data[i_faces] = 1
-    self.meshmanager.plot_faces(face_data=data,color=[(8,45,130), (198,110,203)],opacity=[0,0.5],name=name)       
-```
-
+#### Plot vectors
 ```py
 def plot_vectors(self, an, vn, name):
     self.meshmanager.plot_vectors(anchor=an,vectors=vn,position='tail',color = (255,0,255),name=name)  
