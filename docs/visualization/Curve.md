@@ -16,7 +16,7 @@ def plot_polyline(self, Points, name):
     self.meshmanager.plot_polyline(poly,color=(162,20,47),glossy=0.8,tube_radius=1*self.meshmanager.r,name=name)
 ```
 
-![File](assets/polylines.png)
+![File](../assets/polylines_top.png)
 
 ## Bezier Curve
 
