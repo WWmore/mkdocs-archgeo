@@ -1,15 +1,14 @@
 # Python Functions
 
+Please refer to the original [code](https://github.com/WWmore/DOS) to use. 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Core files `meshpy.py` and generalized `quadring.py` include very basic mesh connectivity functions built by half-edge data structures.
 
+The introductions of all these functions are missing. 
+Adding all the **docstrings** (between the function heads and statements) need some time. 
+Welcome to work together to finish this part! (Final effect [reference](https://gpytoolbox.org/0.2.0/adjacency_matrix/))
 
-
-
-```
+<!-- ```
 import numpy as np
 def mesh()
 //quad meshes
@@ -34,4 +33,4 @@ def bubble_sort(items):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
-```
+``` -->
