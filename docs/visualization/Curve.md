@@ -20,14 +20,46 @@ def plot_polyline(self, Points, name):
 
 ## Bezier Curve
 
+Plot Bezier curve of degree 3 with given 4 control points.
 
+```py
+## plot Bezier curve, control points and control polygon:
+from geometrylab import vtkplot
+from geometrylab.bspline import BSpline
 
+P = np.array([[3,0,0], [0,10,0], [10,-10,0], [10,10,0]])
+sp = BSpline(control_points=P, degree=3)
 
-TODO: insert a fig. here.
+crv = sp.curve_polyline()
+ctrl = sp.control_polyline()
+
+pl_crv = vtkplot.Polyline(polyline=crv, tube_radius=0.1, color='r',sampling=500)
+pl_ctrl = vtkplot.Polyline(polyline=ctrl, color='black')
+pl_pts = vtkplot.Points(P, radius=0.5, color='black')
+
+vtkplot.view([pl_pts, pl_crv, pl_ctrl])
+```
+
+<img src="../assets/bezier.png" align="center" width="500">
 
 
 ## B-spline Curve
 
+Plot B-spline curve of degree 3 with given 5 control points. Two endpoints are interpolated.
 
+```py
+## plot B-spline curve, control points and control polygon:
+P = np.array([[3,0,0], [0,10,0], [10,-10,0], [10,10,0], [-10,-10,0]])
+sp = BSpline(control_points=P, degree=3,closed=False)
 
-TODO: insert a fig. here.
+crv = sp.curve_polyline()
+ctrl = sp.control_polyline()
+
+pl_crv = vtkplot.Polyline(polyline=crv, tube_radius=0.1, color='r',sampling=500)
+pl_ctrl = vtkplot.Polyline(polyline=ctrl, color='black')
+pl_pts = vtkplot.Points(P, radius=0.5, color='black')
+
+vtkplot.view([pl_pts, pl_crv, pl_ctrl])
+```
+
+<img src="../assets/bspline.png" align="center" width="700">
