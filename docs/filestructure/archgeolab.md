@@ -24,31 +24,35 @@
       └─ constraints_equilibrium.py
 ```
 
-## readfile_orthonet
 
-## opt_gui_orthonet
-
-## guidedprojection_orthonet
+|  Files                         | Functions                                                             |
+| ------------------------------ | --------------------------------------------------------------------- |
+| `readfile_orthonet.py`         | read .obj files and open GUI window                                   |
+| `guidedprojection_orthonet.py` | plottings and algorithms settings between GUI window and optimization |
+| `opt_gui_orthonet.py`          | Guided Projection algorithm settings                                  |
 
 
 ## archgeometry
 
-### quadrings
-### orient
-### curves
-### conicSection
-### orthogonalVectors
-### gridshell_new
-### gui_basic
+|  Files                 | Functions                                                           |
+| ---------------------- | ------------------------------------------------------------------- |
+| `quadrings.py`         | superclass on meshpy.py for quad meshes                             |
+| `gui_basis.py`         | superclass on gui.py                                                |
+| `gridshell_new.py`     | superclass on gridshell.py                                          |
+| `orient.py`            | extract oriented vertex-stars on quadmeshes with even singularities |
+| `orthogonalVectors.py` | frame structures $(e_1, e_2, e_3)$                                  |
+| `curves.py`            | extract mesh polylines                                              |
+| `conicSection.py`      | sphere interpolations and packings                                  |
 
 ## constraints
 
-### constraints_basic
+|  Files                       | Functions                                   |
+| ---------------------------- | ------------------------------------------- |
+| `constraints_basis.py`       | commonly used basic constraints             |
+| `constraints_net.py`         | commonly used nets constraints              |
+| `constraints_fairness.py`    | several ways of fairness constraints        |
+| `constraints_glide.py`       | points gliding andfixing                    |
+| `constraints_equilibrium.py` | constraints for equilibrium shellstructures |
 
-### constraints_net
 
-### constraints_fairness
-
-### constraints_glide
-
-### constraints_equilibrium
+![File](../assets/files.png)

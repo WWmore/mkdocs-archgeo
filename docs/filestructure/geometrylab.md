@@ -98,25 +98,25 @@
 
 |  Files                  | Functions                                        |
 | ----------------------- | ------------------------------------------------ |
-│ `scenemanager.py`       | scene manager class                              |
-│ `plotmanager.py`        | plot manager class                               |
-│ `meshplotmanager.py`    | mesh plottint manager class                      |
-│ `plotutilities.py`      | plotting attributes                              |  
-│ `glyphs.py`             | plot arrows, spheres, pipes, discs, cones, rings |
-│ `glyphsource.py`        | Glyph3D                                          |
-│ `pointsource.py`        | Points                                           |
-│ `pointsplotmanager.py`  | plot points                                      |
-│ `edgesource.py`         | plot edge plot                                   |
-│ `polylinesource.py`     | plot polylines                                   |
-│ `bsplineplotmanager.py` | plot B-spline curves                             |
-│ `vectorsource.py`       | vector settings                                  |
-│ `vector3dsource.py`     | plot vectors                                     |
-│ `meshvectorsource.py`   | plot vectors as meshes                           |
-│ `facesource.py`         | plot faces                                       |
-│ `toolbar.py`            | Toolbar settings                                 |
-│ `selector.py`           | interactive selections                           |
-│ `viewer.py`             | GUI viewer layout                                |
-│ `check.py`              | check the changes of mesh connectivity           |
+| `scenemanager.py`       | scene manager class                              |
+| `plotmanager.py`        | plot manager class                               |
+| `meshplotmanager.py`    | mesh plottint manager class                      |
+| `plotutilities.py`      | plotting attributes                              |  
+| `glyphs.py`             | plot arrows, spheres, pipes, discs, cones, rings |
+| `glyphsource.py`        | Glyph3D                                          |
+| `pointsource.py`        | Points                                           |
+| `pointsplotmanager.py`  | plot points                                      |
+| `edgesource.py`         | plot edge plot                                   |
+| `polylinesource.py`     | plot polylines                                   |
+| `bsplineplotmanager.py` | plot B-spline curves                             |
+| `vectorsource.py`       | vector settings                                  |
+| `vector3dsource.py`     | plot vectors                                     |
+| `meshvectorsource.py`   | plot vectors as meshes                           |
+| `facesource.py`         | plot faces                                       |
+| `toolbar.py`            | Toolbar settings                                 |
+| `selector.py`           | interactive selections                           |
+| `viewer.py`             | GUI viewer layout                                |
+| `check.py`              | check the changes of mesh connectivity           |
 
 ## utilities
 
@@ -138,3 +138,6 @@
 |  Files          | Functions                                     |
 | --------------- | --------------------------------------------- |
 | `paneling.py`   | basic frame integrated with algorithm and GUI |
+
+
+![File](../assets/frame.png)

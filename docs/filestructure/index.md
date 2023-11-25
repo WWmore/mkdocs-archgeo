@@ -76,4 +76,6 @@
       └─ constraints_equilibrium.py
 ```
 
-![File](assets/files.png)
+![File](../assets/files.png)
+
+![File](../assets/frame.png)
