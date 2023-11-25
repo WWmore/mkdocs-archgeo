@@ -5,7 +5,7 @@ Curves, surfaces, polyhedra are basic topics in geometry. [Here](https://paulbou
 
 Mesh are discretized surfaces. They are represented by straight edges connecting ranges of points as vertices.
 
-#### Plot mesh
+
 ``` py
 from geometrylab.vtkplot.edgesource import Edges
 from geometrylab.vtkplot.facesource import Faces
