@@ -139,5 +139,9 @@
 | --------------- | --------------------------------------------- |
 | `paneling.py`   | basic frame integrated with algorithm and GUI |
 
+<figure markdown>
+  ![Bezier](../assets/paneling.png){ width="700" }
+  <figcaption>Run paneling.py file</figcaption>
+</figure>
 
 ![File](../assets/frame.png)

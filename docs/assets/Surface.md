@@ -6,14 +6,23 @@ Curves, surfaces, polyhedra are basic topics in geometry. [Here](https://paulbou
 
 ## Parametric Surface
 
-TODO: insert a fig. here.
+<figure markdown>
+  ![Bezier](../assets/cluster.png){ width="700" }
+  <figcaption>Parametric surface</figcaption>
+</figure>
 
 ## Bezier Surface
 
 
-TODO: insert a fig. here.
+<figure markdown>
+  ![Bezier](../assets/cluster.png){ width="700" }
+  <figcaption>Bezier surface</figcaption>
+</figure>
 
 ## B-spline Surface
 
 
-TODO: insert a fig. here.
+<figure markdown>
+  ![Bezier](../assets/cluster.png){ width="700" }
+  <figcaption>B-spline surface</figcaption>
+</figure>

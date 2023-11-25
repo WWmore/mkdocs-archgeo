@@ -21,6 +21,11 @@ def plot_polyline(self, Points, name):
   <figcaption>Polylines</figcaption>
 </figure>
 
+<figure markdown>
+  ![Bezier](../assets/force.png){ width="700" }
+  <figcaption>Edges represented by axial forces</figcaption>
+</figure>
+
 
 ## Bezier Curve
 
