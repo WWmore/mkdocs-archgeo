@@ -40,7 +40,10 @@ pl_pts = vtkplot.Points(P, radius=0.5, color='black')
 vtkplot.view([pl_pts, pl_crv, pl_ctrl])
 ```
 
-<img src="../assets/bezier.png" align="center" width="500">
+<figure markdown>
+  ![Bezier](../assets/bezier.png){ width="500" }
+  <figcaption>Bezier curve</figcaption>
+</figure>
 
 
 ## B-spline Curve
@@ -62,4 +65,7 @@ pl_pts = vtkplot.Points(P, radius=0.5, color='black')
 vtkplot.view([pl_pts, pl_crv, pl_ctrl])
 ```
 
-<img src="../assets/bspline.png" align="center" width="700">
+<figure markdown>
+  ![Bezier](../assets/bspline.png){ width="700" }
+  <figcaption>B-spline curve</figcaption>
+</figure>
