@@ -17,7 +17,7 @@ ArchGeo offers four core features:
 * Solving geometric optimization problems;
 * Fast interactive design.
 
-![File](assets/archgeo_web.png)
+![File](docs/assets/archgeo_web.png)
 
 This repository contains the implementation associated with the paper ["Discrete Orthogonal Structures"](https://doi.org/10.1016/j.cag.2023.05.024). 
 Please cite the paper if you use this code in your project. 
