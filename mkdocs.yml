@@ -53,8 +53,9 @@ plugins:
       python:
         paths: [src, src/meshpy, src/quadrings]  # 指定源代码路径
         options:
-          show_root_heading: true
+          show_root_heading: false
           show_source: false
+          docstring_style: "numpy"
   # - bibtex:
   #     bib_file: assets/refs.bib
 
