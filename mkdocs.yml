@@ -47,6 +47,14 @@ plugins:
   - social
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        paths: [src,src/meshpy,src/quadrings]  # 指定源代码路径
+        options:
+          show_root_heading: true
+          show_source: false
   # - bibtex:
   #     bib_file: assets/refs.bib
 
@@ -73,8 +81,8 @@ markdown_extensions:
   - md_in_html
   - tables
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
   - javascripts/mathjax.js
