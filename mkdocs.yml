@@ -51,7 +51,7 @@ plugins:
     default_handler: python
     handlers:
       python:
-        paths: [src,src/meshpy,src/quadrings]  # 指定源代码路径
+        paths: ["src", "src/meshpy", "src/quadrings"]  # 指定源代码路径
         options:
           show_root_heading: true
           show_source: false
