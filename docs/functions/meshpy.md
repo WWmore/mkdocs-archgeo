@@ -125,3 +125,4 @@
         - halfedge_length
       show_root_heading: false
       show_source: true
+      auto_order: true
