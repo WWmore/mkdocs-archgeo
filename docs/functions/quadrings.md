@@ -1,6 +1,3 @@
----
-title: "regular_vertex_regular_quad"
----
 
 ::: quadrings
     options:

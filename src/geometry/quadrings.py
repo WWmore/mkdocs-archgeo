@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 10 12:18:50 2025
-
-@author: wanghui
-"""
 
 import numpy as np
 
@@ -19,47 +14,45 @@ def regular_vertex_regular_quad(halfedges,ver_star_matrix,
     connectivity.
 
     The function's main logic involves:
-    1. Iterating over each vertex to identify oriented quad faces using the 
-       half-edge structure.
-    2. Handling boundary cases where quad faces may be incomplete or 
-       partially defined.
-    3. Optionally deleting multiple faces that overlap, ensuring a unique 
-       representation of quad faces.
-    4. Returning detailed information about regular vertices, regular quads, 
-       and their connectivity.
+
+    1. Iterating over each vertex to identify oriented quad faces using the half-edge structure.
+
+    2. Handling boundary cases where quad faces may be incomplete or partially defined.
+
+    3. Optionally deleting multiple faces that overlap, ensuring a unique representation of quad faces.
+
+    4. Returning detailed information about regular vertices, regular quads, and their connectivity.
 
     Parameters
     ----------
     halfedges : numpy int array
-                The half-edge data structure representing the mesh. 
-                Each row corresponds to a half-edge with columns representing: 
-                [origin vertex, twin half-edge, next half-edge, prev half-edge, face].
+        The half-edge data structure representing the mesh. 
+        Each row corresponds to a half-edge with columns representing: 
+        [origin vertex, twin half-edge, next half-edge, prev half-edge, face].
     ver_star_matrix : numpy int array
-                    A matrix where each row corresponds to a vertex and contains the indices of its neighboring vertices.
+        A matrix where each row corresponds to a vertex and contains the indices of its neighboring vertices.
     delete_multi : bool, optional (default True)
-                    whether to deletes multiple overlapping faces to ensure unique quad faces or not.
+        whether to deletes multiple overlapping faces to ensure unique quad faces or not.
 
     Returns
     -------
-    - num_rrf : int
-                The number of regular quad faces.
-    - rr_quadface : numpy int array
-                The regular quad faces, each defined by four vertices.
-    - rr_quadface_order :  numpy int array
-                        The order of the quad faces.
-    - num_rrv : int
-                The number of regular vertices.
-    - rr_star : numpy int array
-                The star matrix for regular vertices.
-    - rr_4quad_vers : list
-                    A list of all oriented quad faces, including boundary faces.
+    num_rrf : int
+        The number of regular quad faces.
+    rr_quadface : numpy int array
+        The regular quad faces, each defined by four vertices.
+    rr_quadface_order :  numpy int array
+        The order of the quad faces.
+    num_rrv : int
+        The number of regular vertices.
+    rr_star : numpy int array
+        The star matrix for regular vertices.
+    rr_4quad_vers : list
+        A list of all oriented quad faces, including boundary faces.
 
 
     Note:
     --------
-        This function assumes the input mesh is manifold and orientable. It 
-        also assumes that the half-edge structure is correctly defined, with 
-        each half-edge pointing to its twin, next, and previous half-edges.
+    This function assumes the input mesh is manifold and orientable. It also assumes that the half-edge structure is correctly defined, with each half-edge pointing to its twin, next, and previous half-edges.
         
 
     See Also:
