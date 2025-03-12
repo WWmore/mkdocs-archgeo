@@ -155,7 +155,6 @@ from .quadrings import get_checker_select_vertex
 from .quadrings import get_checkerboard_black
 from .quadrings import get_checkerboard_white
 from .quadrings import get_quad_mesh_1family_isoline
-from .quadrings import get_quad_mesh_2family_isolines
 from .quadrings import get_1family_oriented_polyline
 from .quadrings import get_2families_polyline_from_1closed_bdry
 from .quadrings import get_i_boundary_vertices
@@ -175,5 +174,3 @@ from .quadrings import Get_Diagonals_of_Multinets
 from .quadrings import make_quad_mesh_from_indices
 from .quadrings import get_diagonal_mesh
 from .quadrings import get_midline_mesh
-from .quadrings import get_checkboard_black
-from .quadrings import get_checkboard_white
