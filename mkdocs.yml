@@ -48,14 +48,17 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - mkdocstrings:
-    default_handler: python
-    handlers:
-      python:
-        paths: [src, src/meshpy, src/quadrings]  # 指定源代码路径
-        options:
-          show_root_heading: false
-          show_source: false
-          docstring_style: "numpy"
+      default_handler: python
+      handlers:
+        python:
+          paths: [src, src/geometry]
+          options:
+            show_root_heading: False
+            show_source: False
+            docstring_style: numpy
+          setup_commands:
+            - import sys
+            - sys.path.append('/Users/wanghui/Github/mkdocs-archgeo/src')
   # - bibtex:
   #     bib_file: assets/refs.bib
 
