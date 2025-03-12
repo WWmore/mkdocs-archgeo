@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import numpy as np
-
 
 
 def regular_vertex_regular_quad(halfedges,ver_star_matrix,
@@ -55,16 +52,8 @@ def regular_vertex_regular_quad(halfedges,ver_star_matrix,
     This function assumes the input mesh is manifold and orientable. It also assumes that the half-edge structure is correctly defined, with each half-edge pointing to its twin, next, and previous half-edges.
         
 
-    See Also:
-    --------
-    oriented self.quadfaces()
-    self.num_rrv : same with num_regular
-    self.rr_star : same with starM
-    self.num_rrf : same with num_quadface
-    self.rr_quadface : same but different order with quadface
-    self.rr_quadface_order: same but different order with quadface_order
-    f4: including boundary added face [0,1,-1,2]...
-    
+    See Also: quadfaces()
+
     
     Examples
     --------
