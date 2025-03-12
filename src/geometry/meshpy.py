@@ -46,9 +46,13 @@ def make_mesh(self, vertices_list, faces_list):
     and it reorients the mesh if necessary.
 
     The main logic involves:
+
     1. Creating half-edges from the input vertices and faces.
+
     2. Establishing relationships between half-edges, vertices, and faces.
+
     3. Handling boundary edges and faces.
+
     4. Reorienting the mesh if it is not initially orientable.
 
     Parameters
@@ -191,7 +195,9 @@ def origin(self, halfedge_index=None):
     See Also
     --------
     next : Retrieves the next half-edge in the face loop.
+
     previous : Retrieves the previous half-edge in the face loop.
+
     twin : Retrieves the twin half-edge.
     """
     H = self.halfedges
@@ -223,7 +229,9 @@ def face(self, halfedge_index=None):
     See Also
     --------
     origin : Retrieves the origin vertex of a half-edge.
+
     next : Retrieves the next half-edge in the face loop.
+
     previous : Retrieves the previous half-edge in the face loop.
     """
     H = self.halfedges
@@ -255,7 +263,9 @@ def next(self, halfedge_index=None):
     See Also
     --------
     previous : Retrieves the previous half-edge in the face loop.
+
     origin : Retrieves the origin vertex of a half-edge.
+
     face : Retrieves the face associated with a half-edge.
     """
     H = self.halfedges
@@ -287,7 +297,9 @@ def previous(self, halfedge_index=None):
     See Also
     --------
     next : Retrieves the next half-edge in the face loop.
+
     origin : Retrieves the origin vertex of a half-edge.
+
     face : Retrieves the face associated with a half-edge.
     """
     H = self.halfedges
@@ -320,6 +332,7 @@ def twin(self, halfedge_index=None):
     See Also
     --------
     origin : Retrieves the origin vertex of a half-edge.
+
     face : Retrieves the face associated with a half-edge.
     """
     H = self.halfedges
@@ -351,7 +364,9 @@ def edge(self, halfedge_index=None):
     See Also
     --------
     origin : Retrieves the origin vertex of a half-edge.
+
     face : Retrieves the face associated with a half-edge.
+
     twin : Retrieves the twin half-edge.
     """
     H = self.halfedges
@@ -371,8 +386,11 @@ def read_obj_file(self, file_name):
     the `make_mesh` method to construct the half-edge mesh data structure.
 
     The main logic involves:
+
     1. Reading the OBJ file line by line to extract vertex and face information.
+    
     2. Handling different formats of face definitions (e.g., with or without texture coordinates).
+    
     3. Calling `make_mesh` to construct the mesh.
 
     Parameters
@@ -393,6 +411,7 @@ def read_obj_file(self, file_name):
     See Also
     --------
     make_mesh : Constructs the half-edge mesh from vertices and faces.
+
     make_obj_file : Writes the mesh data to an OBJ file.
     """
     file_name = str(file_name)
@@ -613,6 +632,7 @@ def vertex_ring_vertices_iterators(self, sort=False, order=False, return_lengths
     See Also
     --------
     vertex_ring_faces_iterators : Iterates over faces in the vertex ring.
+
     vertex_ring_edges_iterators : Iterates over edges in the vertex ring.
     """
     H = self.halfedges
@@ -662,6 +682,7 @@ def vertex_ring_faces_iterators(self, sort=False, order=False):
     See Also
     --------
     vertex_ring_vertices_iterators : Iterates over vertices in the vertex ring.
+
     vertex_ring_edges_iterators : Iterates over edges in the vertex ring.
     """
     H = self.halfedges
@@ -708,6 +729,7 @@ def vertex_ring_edges_iterators(self, sort=False, order=False):
     See Also
     --------
     vertex_ring_vertices_iterators : Iterates over vertices in the vertex ring.
+
     vertex_ring_faces_iterators : Iterates over faces in the vertex ring.
     """
     H = self.halfedges
@@ -754,6 +776,7 @@ def face_edge_vertices_iterators(self, sort=False, order=False):
     See Also
     --------
     face_vertices_iterators : Iterates over vertices in each face.
+
     face_edges_iterators : Iterates over edges in each face.
     """
     H = self.halfedges
@@ -802,6 +825,7 @@ def face_vertices_iterators(self):
     See Also
     --------
     face_edge_vertices_iterators : Iterates over vertices of edges in each face.
+
     face_edges_iterators : Iterates over edges in each face.
     """
     H = self.halfedges
@@ -836,6 +860,7 @@ def face_edges_iterators(self):
     See Also
     --------
     face_vertices_iterators : Iterates over vertices in each face.
+
     face_edge_vertices_iterators : Iterates over vertices of edges in each face.
     """
     H = self.halfedges
@@ -985,6 +1010,7 @@ def vertex_double_ring_vertices_list(self):
     See Also
     --------
     vertex_double_ring_vertices_iterators : Iterates over vertices in the double ring.
+    
     vertex_ring_vertices_list : Returns a list of vertex rings for each vertex.
     """
     ring_list = [[] for i in range(self.V)]
@@ -1018,6 +1044,7 @@ def vertex_ring_edges_list(self):
     See Also
     --------
     vertex_ring_edges_iterators : Iterates over edges in the vertex ring.
+    
     vertex_ring_vertices_list : Returns a list of vertex rings for each vertex.
     """
     ring_list = [[] for i in range(self.V)]
@@ -1051,6 +1078,7 @@ def vertex_ring_faces_list(self):
     See Also
     --------
     vertex_ring_faces_iterators : Iterates over faces in the vertex ring.
+    
     vertex_ring_vertices_list : Returns a list of vertex rings for each vertex.
     """
     ring_list = [[] for i in range(self.V)]
@@ -1088,6 +1116,7 @@ def face_lengths(self):
     See Also
     --------
     faces_list : Retrieves the list of faces.
+    
     face_vertices_iterators : Iterates over vertices of each face.
     """
     H = self.halfedges
@@ -1124,6 +1153,7 @@ def cell_arrays(self):
     See Also
     --------
     faces_list : Retrieves the list of faces.
+
     face_lengths : Computes the number of edges for each face.
     """
     H = self.halfedges
@@ -1165,6 +1195,7 @@ def faces_list(self):
     See Also
     --------
     face_lengths : Computes the number of edges for each face.
+
     face_vertices_iterators : Iterates over vertices of each face.
     """
     faces_list = [[] for i in range(self.F)]
@@ -1201,6 +1232,7 @@ def face_triangles(self):
     See Also
     --------
     faces_list : Retrieves the list of faces.
+
     face_lengths : Computes the number of edges for each face.
     """
     H = np.copy(self.halfedges)
@@ -1256,6 +1288,7 @@ def edge_vertices(self):
     See Also
     --------
     edge_faces : Retrieves the faces adjacent to each edge.
+
     edge_lengths : Computes the lengths of all edges.
     """
     H  = self.halfedges
@@ -1291,6 +1324,7 @@ def edge_faces(self):
     See Also
     --------
     edge_vertices : Retrieves the vertices of each edge.
+
     are_boundary_edges : Checks if edges are on the boundary.
     """
     H  = self.halfedges
@@ -1324,6 +1358,7 @@ def vertices_edge_map(self):
     See Also
     --------
     vertices_edge_faces_maps : Creates maps for vertices, edges, and faces.
+
     edge_vertices : Retrieves the vertices of each edge.
     """
     H  = self.halfedges
@@ -1361,6 +1396,7 @@ def vertices_edge_faces_maps(self):
     See Also
     --------
     vertices_edge_map : Creates a map for vertices and edges.
+
     edge_faces : Retrieves the faces adjacent to each edge.
     """
     H  = self.halfedges
@@ -1434,6 +1470,7 @@ def boundary_vertices(self):
     See Also
     --------
     boundary_edges : Retrieves the indices of boundary edges.
+    
     boundary_faces : Retrieves the indices of boundary faces.
     """
     H = self.halfedges
@@ -1494,6 +1531,7 @@ def boundary_halfedges(self):
     See Also
     --------
     inner_halfedges : Retrieves the indices of inner half-edges.
+
     boundary_edges : Retrieves the indices of boundary edges.
     """
     H = self.halfedges
@@ -1524,6 +1562,7 @@ def boundary_faces(self):
     See Also
     --------
     boundary_vertices : Retrieves the indices of boundary vertices.
+
     boundary_edges : Retrieves the indices of boundary edges.
     """
     H = self.halfedges
@@ -1587,6 +1626,7 @@ def boundary_curves(self, corner_split=False):
     See Also
     --------
     boundary_vertices : Retrieves the indices of boundary vertices.
+
     boundary_edges : Retrieves the indices of boundary edges.
     """
     H = self.halfedges
@@ -1646,6 +1686,7 @@ def boundary_curves_halfedges(self, corner_split=False):
     See Also
     --------
     boundary_curves : Retrieves the boundary curves in terms of vertices.
+
     boundary_halfedges : Retrieves the indices of boundary half-edges.
     """
     H = self.halfedges
@@ -1700,6 +1741,7 @@ def boundary_polylines(self):
     See Also
     --------
     boundary_curves : Retrieves the boundary curves in terms of vertices.
+
     Polyline : A class representing a polyline object.
     """
     polylines = []
@@ -1735,6 +1777,7 @@ def mesh_corners(self):
     See Also
     --------
     boundary_curves : Retrieves the boundary curves in terms of vertices.
+
     boundary_curves_halfedges : Retrieves the boundary curves in terms of half-edges.
     """
     H = self.halfedges
@@ -1774,6 +1817,7 @@ def double_boundary_vertices(self):
     See Also
     --------
     boundary_vertices : Retrieves the indices of boundary vertices.
+
     boundary_faces : Retrieves the indices of boundary faces.
     """
     bf = self.are_boundary_faces()
@@ -1807,6 +1851,7 @@ def boundary_edges(self):
     See Also
     --------
     boundary_vertices : Retrieves the indices of boundary vertices.
+
     boundary_faces : Retrieves the indices of boundary faces.
     """
     H = self.halfedges
@@ -1843,6 +1888,7 @@ def are_boundary_edges(self):
     See Also
     --------
     boundary_edges : Retrieves the indices of boundary edges.
+
     are_boundary_faces : Checks if faces are on the boundary.
     """
     H = self.halfedges
@@ -1875,6 +1921,7 @@ def are_boundary_faces(self):
     See Also
     --------
     boundary_faces : Retrieves the indices of boundary faces.
+
     are_boundary_edges : Checks if edges are on the boundary.
     """
     H = self.halfedges
@@ -1914,6 +1961,7 @@ def face_vector_areas(self):
     See Also
     --------
     face_areas : Computes the scalar areas of all faces.
+
     face_normals : Computes the normal vectors of all faces.
     """
     f, v1, v2 = self.face_edge_vertices_iterators(order=True)
@@ -1931,8 +1979,11 @@ def face_normals(self):
     of each face and normalizing the resulting vector.
 
     The main logic involves:
+
     1. Iterating over each face to extract its vertices.
+
     2. Computing the cross product of two edges to obtain the normal vector.
+
     3. Normalizing the normal vector to ensure unit length.
 
     Parameters
@@ -1953,6 +2004,7 @@ def face_normals(self):
     See Also
     --------
     vertex_normals : Computes the normal vectors for each vertex.
+
     edge_normals : Computes the normal vectors for each edge.
     """
     N = self.face_vector_areas()
@@ -1968,8 +2020,11 @@ def vertex_normals(self):
     to ensure they are unit vectors.
 
     The main logic involves:
+
     1. Iterating over each vertex to identify its adjacent faces.
+
     2. Summing the face normals of these adjacent faces.
+
     3. Normalizing the summed vector to obtain the vertex normal.
 
     Parameters
@@ -1990,6 +2045,7 @@ def vertex_normals(self):
     See Also
     --------
     face_normals : Computes the normal vectors for each face.
+
     edge_normals : Computes the normal vectors for each edge.
     """
     N = self.face_vector_areas()
@@ -2008,8 +2064,11 @@ def edge_normals(self):
     normal is computed based on the single adjacent face.
 
     The main logic involves:
+
     1. Identifying the faces adjacent to each edge.
+
     2. Averaging the face normals of these adjacent faces.
+
     3. Normalizing the resulting vector to obtain the edge normal.
 
     Parameters
@@ -2030,6 +2089,7 @@ def edge_normals(self):
     See Also
     --------
     face_normals : Computes the normal vectors for each face.
+
     vertex_normals : Computes the normal vectors for each vertex.
     """
     N = self.face_normals()
@@ -2048,8 +2108,11 @@ def boundary_normals(self):
     is perpendicular to the edge and lies in the plane of the adjacent face.
 
     The main logic involves:
+
     1. Identifying boundary edges and their adjacent faces.
+
     2. Computing the cross product of edge vectors and face normals.
+
     3. Normalizing the resulting vectors to obtain unit normals.
 
     Parameters
@@ -2070,6 +2133,7 @@ def boundary_normals(self):
     See Also
     --------
     boundary_edges : Retrieves the indices of boundary edges.
+
     edge_normals : Computes the normal vectors for each edge.
     """
     H = self.halfedges
@@ -2093,8 +2157,11 @@ def boundary_tangents(self, normalize=True):
     The tangents are computed as the direction vectors of the boundary edges.
 
     The main logic involves:
+
     1. Identifying boundary edges.
+
     2. Computing the direction vectors of these edges.
+
     3. Optionally normalizing the tangent vectors.
 
     Parameters
@@ -2115,6 +2182,7 @@ def boundary_tangents(self, normalize=True):
     See Also
     --------
     boundary_edges : Retrieves the indices of boundary edges.
+
     boundary_normals : Computes the normal vectors for boundary edges.
     """
     H = self.halfedges
@@ -2143,8 +2211,11 @@ def face_areas(self):
     of the cross product of two edges.
 
     The main logic involves:
+
     1. Iterating over each face to extract its vertices.
+
     2. Computing the cross product of two edge vectors.
+    
     3. Calculating the area as half the magnitude of the cross product.
 
     Parameters
@@ -2165,6 +2236,7 @@ def face_areas(self):
     See Also
     --------
     area : Computes the total surface area of the mesh.
+
     face_vector_areas : Computes the vector areas of faces.
     """
     N = self.face_vector_areas()
@@ -2179,7 +2251,9 @@ def area(self):
     of all faces in the mesh.
 
     The main logic involves:
+
     1. Calling `face_areas` to compute the area of each face.
+
     2. Summing the face areas to obtain the total surface area.
 
     Parameters
@@ -2213,8 +2287,11 @@ def vertex_ring_areas(self):
     summing the areas of adjacent faces and dividing by the number of faces.
 
     The main logic involves:
+
     1. Iterating over each vertex to identify its adjacent faces.
+
     2. Summing the areas of these adjacent faces.
+
     3. Dividing by the number of adjacent faces to obtain the average area.
 
     Parameters
@@ -2235,6 +2312,7 @@ def vertex_ring_areas(self):
     See Also
     --------
     face_areas : Computes the areas of individual faces.
+
     vertex_ring_faces_iterators : Iterates over faces adjacent to each vertex.
     """
     L = self.face_lengths()
@@ -2256,7 +2334,9 @@ def make_kdtree(self):
     allowing for fast nearest-neighbor searches.
 
     The main logic involves:
+
     1. Creating a k-d tree from the vertex positions.
+
     2. Storing the k-d tree within the mesh instance for later use.
 
     Parameters
@@ -2329,7 +2409,9 @@ def edge_mid_points(self):
     of its two vertices.
 
     The main logic involves:
+
     1. Iterating over all edges.
+
     2. Computing the midpoint as the average of the two vertex positions.
 
     Parameters
@@ -2350,6 +2432,7 @@ def edge_mid_points(self):
     See Also
     --------
     edge_lengths : Computes the lengths of all edges.
+
     edge_vectors : Computes the direction vectors of all edges.
     """
     v1, v2 = self.edge_vertices()
@@ -2364,7 +2447,9 @@ def edge_vectors(self):
     the position of the starting vertex from the position of the ending vertex.
 
     The main logic involves:
+
     1. Iterating over all edges.
+
     2. Computing the direction vector as the difference between the two vertex positions.
 
     Parameters
@@ -2385,6 +2470,7 @@ def edge_vectors(self):
     See Also
     --------
     edge_lengths : Computes the lengths of all edges.
+
     edge_mid_points : Computes the midpoints of all edges.
     """
     v1, v2 = self.edge_vertices()
@@ -2399,7 +2485,9 @@ def face_barycenters(self):
     of its vertices.
 
     The main logic involves:
+
     1. Iterating over all faces.
+
     2. Computing the barycenter as the average of the vertex positions.
 
     Parameters
@@ -2420,6 +2508,7 @@ def face_barycenters(self):
     See Also
     --------
     face_areas : Computes the areas of all faces.
+
     face_circum_circles : Computes the circumcircles of all faces.
     """
     H = self.halfedges
@@ -2442,7 +2531,9 @@ def edge_lengths(self):
     between its two vertices.
 
     The main logic involves:
+
     1. Iterating over all edges.
+
     2. Computing the length as the Euclidean distance between the two vertex positions.
 
     Parameters
@@ -2463,6 +2554,7 @@ def edge_lengths(self):
     See Also
     --------
     edge_vectors : Computes the direction vectors of all edges.
+
     mean_edge_length : Computes the mean length of all edges.
     """
     v1, v2 = self.edge_vertices()
@@ -2479,7 +2571,9 @@ def mean_edge_length(self):
     This function calculates the mean edge length by averaging the lengths of all edges.
 
     The main logic involves:
+
     1. Calling `edge_lengths` to compute the lengths of all edges.
+
     2. Computing the mean length by summing all edge lengths and dividing by the number of edges.
 
     Parameters
@@ -2514,8 +2608,11 @@ def face_planarity(self, scale_invariant=True):
     scale-invariant.
 
     The main logic involves:
+
     1. Iterating over all faces.
+
     2. Computing the deviation from planarity using the cross product of edge vectors.
+    
     3. Normalizing the deviation if scale-invariant planarity is requested.
 
     Parameters
@@ -2536,6 +2633,7 @@ def face_planarity(self, scale_invariant=True):
     See Also
     --------
     face_areas : Computes the areas of all faces.
+
     face_normals : Computes the normal vectors of all faces.
     """
     planarity = np.zeros((self.F))
@@ -2578,7 +2676,9 @@ def edge_versors(self):
     This function normalizes the direction vectors of each edge to obtain unit vectors.
 
     The main logic involves:
+
     1. Calling `edge_vectors` to compute the direction vectors of all edges.
+
     2. Normalizing each direction vector to obtain a unit vector.
 
     Parameters
@@ -2599,6 +2699,7 @@ def edge_versors(self):
     See Also
     --------
     edge_vectors : Computes the direction vectors of all edges.
+
     edge_lengths : Computes the lengths of all edges.
     """
     v1, v2 = self.edge_vertices()
@@ -2614,7 +2715,9 @@ def bounding_box(self):
     along each axis (x, y, z).
 
     The main logic involves:
+
     1. Finding the minimum and maximum x, y, and z coordinates of all vertices.
+
     2. Returning the bounding box as a list of ranges for each axis.
 
     Parameters
@@ -2652,7 +2755,9 @@ def mesh_center(self):
     of its bounding box.
 
     The main logic involves:
+
     1. Calling `bounding_box` to compute the axis-aligned bounding box.
+
     2. Computing the center as the midpoint of each axis range.
 
     Parameters
@@ -2689,8 +2794,11 @@ def face_circum_circles(self):
     defined by the three vertices.
 
     The main logic involves:
+
     1. Iterating over all faces.
+    
     2. Computing the circumcircle using the vertices of each face.
+
     3. Returning the center and radius of each circumcircle.
 
     Parameters
@@ -2712,6 +2820,7 @@ def face_circum_circles(self):
     See Also
     --------
     face_barycenters : Computes the barycenters of all faces.
+
     face_areas : Computes the areas of all faces.
     """
     f, vi = self.face_vertices_iterators()
@@ -2735,8 +2844,11 @@ def flip_normals(self):
     of the faces.
 
     The main logic involves:
+
     1. Iterating over all half-edges.
+
     2. Swapping the origin and destination vertices of each half-edge.
+
     3. Updating the face normals accordingly.
 
     Parameters
@@ -2757,6 +2869,7 @@ def flip_normals(self):
     See Also
     --------
     face_normals : Computes the normal vectors of all faces.
+
     vertex_normals : Computes the normal vectors of all vertices.
     """
     H = self.halfedges
@@ -2772,8 +2885,11 @@ def orient_faces(self, vertices_list, faces_list):
     structure.
 
     The main logic involves:
+
     1. Iterating over all faces and checking their orientation.
+
     2. Reversing the vertex order of any face with inconsistent orientation.
+
     3. Returning the reoriented face list.
 
     Parameters
@@ -2862,8 +2978,11 @@ def vertex_ring_expansion(self, v_index, callback=None, depth=None):
     the specified vertex and collects all vertices within the given depth.
 
     The main logic involves:
+
     1. Initializing the traversal from the specified vertex.
+
     2. Iteratively expanding the vertex ring by following adjacent vertices.
+
     3. Optionally applying a callback function to each vertex during traversal.
 
     Parameters
@@ -2918,8 +3037,11 @@ def make_simply_connected(self):
     boundary loops, resulting in a simply connected mesh.
 
     The main logic involves:
+
     1. Identifying all boundary loops in the mesh.
+
     2. Cutting the mesh along boundary edges to merge boundary loops.
+
     3. Reconstructing the mesh topology after cutting.
 
     Parameters
@@ -2940,6 +3062,7 @@ def make_simply_connected(self):
     See Also
     --------
     boundary_curves : Retrieves the boundary loops of the mesh.
+
     cut : Cuts the mesh along a specified boundary edge.
     """
     curves = self.boundary_curves(corner_split=False)
@@ -2965,8 +3088,11 @@ def mesh_curves(self):
     edges and vertices. The curves can be used for analysis or visualization.
 
     The main logic involves:
+
     1. Identifying boundary and internal edges.
+
     2. Following edges to form continuous curves.
+
     3. Returning the extracted curves as lists of vertex indices.
 
     Parameters
@@ -2987,6 +3113,7 @@ def mesh_curves(self):
     See Also
     --------
     boundary_curves : Retrieves the boundary loops of the mesh.
+
     mesh_polylines : Converts curves to polyline objects.
     """
     _,_, valence = self.vertex_ring_vertices_iterators(return_lengths=True)
@@ -3039,7 +3166,9 @@ def mesh_polylines(self):
     into polyline objects, which can be used for visualization or further processing.
 
     The main logic involves:
+
     1. Calling `mesh_curves` to extract the curves from the mesh.
+    
     2. Converting each curve to a polyline object using vertex positions.
 
     Parameters
@@ -3060,6 +3189,7 @@ def mesh_polylines(self):
     See Also
     --------
     mesh_curves : Extracts the curves from the mesh.
+
     Polyline : A class representing a polyline object.
     """
     curves = self.mesh_curves()
@@ -3083,7 +3213,9 @@ def move(self, displacement_vector):
     each vertex position.
 
     The main logic involves:
+
     1. Adding the displacement vector to each vertex coordinate.
+
     2. Updating the vertex positions in place.
 
     Parameters
@@ -3115,8 +3247,11 @@ def scale(self, factor, center=[0, 0, 0]):
     specified factor, relative to a given center point.
 
     The main logic involves:
+
     1. Translating the mesh to the origin by subtracting the center point.
+
     2. Scaling the mesh by the specified factor.
+
     3. Translating the mesh back to the original center point.
 
     Parameters
@@ -3157,8 +3292,11 @@ def vertex_ring_parametrization(self):
     vertex ring, based on the angular position around the central vertex.
 
     The main logic involves:
+
     1. Iterating over each vertex and its adjacent vertices (vertex ring).
+
     2. Computing the angular position of each adjacent vertex.
+
     3. Assigning parametric coordinates (U, V) based on the angular position.
 
     Parameters
@@ -3215,8 +3353,11 @@ def vertex_local_frame(self):
     - The x and y axes are orthogonal to the z-axis and each other.
 
     The main logic involves:
+
     1. Computing the vertex normals.
+
     2. Finding orthogonal vectors to the vertex normals.
+
     3. Constructing the local frames.
 
     Parameters
@@ -3237,6 +3378,7 @@ def vertex_local_frame(self):
     See Also
     --------
     vertex_normals : Computes the normal vectors of all vertices.
+
     Frame : A class representing a local coordinate frame.
     """
     o = self.vertices
@@ -3255,8 +3397,11 @@ def edge_angle_vectors(self):
     the face normals.
 
     The main logic involves:
+
     1. Iterating over each edge and its adjacent faces.
+    
     2. Computing the cross product of the face normals.
+
     3. Normalizing the resulting vector to obtain the angle vector.
 
     Parameters
@@ -3277,6 +3422,7 @@ def edge_angle_vectors(self):
     See Also
     --------
     edge_sine_vectors : Computes the sine vectors for each edge.
+
     face_normals : Computes the normal vectors of all faces.
     """
     sin = self.edge_sine_vectors()
@@ -3292,8 +3438,11 @@ def edge_angles(self):
     The dihedral angle is the angle between the face normals.
 
     The main logic involves:
+
     1. Iterating over each edge and its adjacent faces.
+    
     2. Computing the dot product of the face normals.
+
     3. Calculating the dihedral angle using the arccosine function.
 
     Parameters
@@ -3314,6 +3463,7 @@ def edge_angles(self):
     See Also
     --------
     edge_angle_vectors : Computes the angle vectors for each edge.
+
     face_normals : Computes the normal vectors of all faces.
     """
     sin = self.edge_sine_vectors()
@@ -3329,8 +3479,11 @@ def edge_sine_vectors(self):
     the cross product of the face normals.
 
     The main logic involves:
+
     1. Iterating over each edge and its adjacent faces.
+
     2. Computing the cross product of the face normals.
+
     3. Normalizing the resulting vector to obtain the sine vector.
 
     Parameters
@@ -3351,6 +3504,7 @@ def edge_sine_vectors(self):
     See Also
     --------
     edge_angle_vectors : Computes the angle vectors for each edge.
+
     face_normals : Computes the normal vectors of all faces.
     """
     v, ej = self.vertex_ring_edges_iterators(sort=True)
@@ -3374,8 +3528,11 @@ def extended_shape_operator(self, area_normalization=False, use_sine=False):
     representing the curvature properties of the mesh at each vertex.
 
     The main logic involves:
+
     1. Iterating over each vertex and its adjacent edges.
+
     2. Computing the curvature contributions from each edge.
+
     3. Summing the contributions to form the extended shape operator.
 
     Parameters
@@ -3398,7 +3555,9 @@ def extended_shape_operator(self, area_normalization=False, use_sine=False):
     See Also
     --------
     principal_curvatures : Computes the principal curvatures from the shape operator.
+    
     edge_angle_vectors : Computes the angle vectors for each edge.
+    
     edge_sine_vectors : Computes the sine vectors for each edge.
     """
     v, ej = self.vertex_ring_edges_iterators(sort=True)
@@ -3425,7 +3584,9 @@ def principal_curvatures(self, area_normalization=False, use_sine=False):
     directions by analyzing the extended shape operator at each vertex.
 
     The main logic involves:
+
     1. Computing the extended shape operator for each vertex.
+
     2. Diagonalizing the shape operator to obtain the principal curvatures and directions.
 
     Parameters
@@ -3454,7 +3615,9 @@ def principal_curvatures(self, area_normalization=False, use_sine=False):
     See Also
     --------
     extended_shape_operator : Computes the extended shape operator for each vertex.
+    
     gaussian_curvature : Computes the Gaussian curvature from principal curvatures.
+    
     mean_curvature : Computes the mean curvature from principal curvatures.
     """
     W = self.extended_shape_operator(area_normalization, use_sine)
@@ -3485,7 +3648,9 @@ def curvature_ratios(self):
     the surface is more cylindrical or saddle-like).
 
     The main logic involves:
+
     1. Computing the principal curvatures using `principal_curvatures`.
+
     2. Calculating the ratio of the absolute values of the principal curvatures.
 
     Parameters
@@ -3522,7 +3687,9 @@ def gaussian_curvature(self):
     principal curvatures at each vertex.
 
     The main logic involves:
+
     1. Computing the principal curvatures using `principal_curvatures`.
+
     2. Calculating the product of the principal curvatures.
 
     Parameters
@@ -3543,6 +3710,7 @@ def gaussian_curvature(self):
     See Also
     --------
     principal_curvatures : Computes the principal curvatures for each vertex.
+   
     mean_curvature : Computes the mean curvature for each vertex.
     """
     K = self.principal_curvatures(True, use_sine=True)
@@ -3556,7 +3724,9 @@ def mean_curvature(self):
     principal curvatures at each vertex.
 
     The main logic involves:
+
     1. Computing the principal curvatures using `principal_curvatures`.
+    
     2. Calculating the average of the principal curvatures.
 
     Parameters
@@ -3577,6 +3747,7 @@ def mean_curvature(self):
     See Also
     --------
     principal_curvatures : Computes the principal curvatures for each vertex.
+    
     gaussian_curvature : Computes the Gaussian curvature for each vertex.
     """
     K = self.principal_curvatures(True)
@@ -3592,8 +3763,11 @@ def edge_cotangents_weigths(self):
     discrete differential geometry for various computations.
 
     The main logic involves:
+
     1. Iterating over each edge and its adjacent faces.
+
     2. Computing the cotangent of the angles between adjacent edges.
+
     3. Summing the cotangent weights for each edge.
 
     Parameters
@@ -3639,8 +3813,11 @@ def mean_curvature_normal(self):
     represents the direction and magnitude of the mean curvature.
 
     The main logic involves:
+
     1. Computing the cotangent weights using `edge_cotangents_weights`.
+
     2. Summing the weighted edge vectors to obtain the mean curvature normal.
+
     3. Normalizing the resulting vectors.
 
     Parameters
@@ -3661,6 +3838,7 @@ def mean_curvature_normal(self):
     See Also
     --------
     edge_cotangents_weights : Computes the cotangent weights for each edge.
+
     mean_curvature : Computes the mean curvature for each vertex.
     """
     b = self.boundary_vertices()
@@ -3686,8 +3864,11 @@ def cut(self, vertex_index):
     until another boundary vertex is reached.
 
     The main logic involves:
+
     1. Identifying the boundary edge starting from the specified vertex.
+
     2. Iteratively splitting the boundary edge and updating the half-edge structure.
+    
     3. Creating new vertices and half-edges to maintain mesh consistency.
 
     Parameters
@@ -3802,8 +3983,11 @@ def is_triangular_mesh(self):
     This function verifies whether all faces in the mesh are triangles.
 
     The main logic involves:
+
     1. Iterating over all faces.
+
     2. Checking the number of vertices per face.
+
     3. Returning True if all faces are triangles, otherwise False.
 
     Parameters
@@ -3839,8 +4023,11 @@ def loop(self, steps=1):
     The new vertices are positioned based on the Loop subdivision rules.
 
     The main logic involves:
+
     1. Identifying the vertices and edges of each triangle.
+
     2. Computing the new vertex positions using the Loop subdivision weights.
+
     3. Creating new faces and updating the mesh topology.
 
     Parameters
@@ -3911,8 +4098,11 @@ def catmull_clark(self, steps=1):
     using the Catmull-Clark rules. It works for both triangular and quadrilateral meshes.
 
     The main logic involves:
+
     1. Iterating over each face and its vertices.
+
     2. Computing new vertex positions using the Catmull-Clark weights.
+
     3. Creating new faces and updating the mesh topology.
 
     Parameters
@@ -3992,8 +4182,11 @@ def dual_mesh(self, make_boundary=True):
     to a face in the dual mesh.
 
     The main logic involves:
+
     1. Computing the barycenters of the original faces to define the dual vertices.
+    
     2. Creating new faces in the dual mesh based on the original vertex connectivity.
+    
     3. Handling boundary cases if `make_boundary` is True.
 
     Parameters
@@ -4066,8 +4259,11 @@ def delete_faces(self, faces):
     It also removes any half-edges and vertices that are no longer connected.
 
     The main logic involves:
+
     1. Identifying the half-edges and vertices associated with the faces to be deleted.
+    
     2. Removing the faces and updating the half-edge structure.
+    
     3. Cleaning up any unconnected vertices and edges.
 
     Parameters
@@ -4115,8 +4311,11 @@ def delete_unconnected_vertices(self):
     It updates the mesh topology accordingly.
 
     The main logic involves:
+
     1. Identifying vertices that are not referenced by any half-edge.
+
     2. Removing these vertices from the mesh.
+
     3. Updating the vertex indices in the half-edge structure.
 
     Parameters
@@ -4153,8 +4352,11 @@ def exploded_mesh(self):
     effectively "exploding" the mesh into individual faces.
 
     The main logic involves:
+
     1. Duplicating the vertices for each face.
+
     2. Creating new faces using the duplicated vertices.
+
     3. Constructing the exploded mesh topology.
 
     Parameters
@@ -4198,8 +4400,11 @@ def delete_edge(self, edge_index):
     It also removes any half-edges and vertices that are no longer connected.
 
     The main logic involves:
+
     1. Identifying the half-edges associated with the edge to be deleted.
+
     2. Removing the edge and updating the half-edge structure.
+
     3. Cleaning up any unconnected vertices and edges.
 
     Parameters
@@ -4220,6 +4425,7 @@ def delete_edge(self, edge_index):
     See Also
     --------
     delete_faces : Deletes specified faces from the mesh.
+
     delete_unconnected_vertices : Removes unconnected vertices from the mesh.
     """
     h = self.edge_halfedge(edge_index)
@@ -4235,8 +4441,11 @@ def flip_edge(self, edge_index):
     adjacent faces. This operation is useful for optimizing mesh quality.
 
     The main logic involves:
+
     1. Identifying the half-edges associated with the edge.
+
     2. Swapping the adjacent faces of the edge.
+
     3. Updating the half-edge structure.
 
     Parameters
@@ -4257,6 +4466,7 @@ def flip_edge(self, edge_index):
     See Also
     --------
     split_edge : Splits an edge into two edges.
+
     collapse_edge : Collapses an edge into a single vertex.
     """
     h = self.edge_halfedge(edge_index)
@@ -4273,8 +4483,11 @@ def split_edge(self, edge_index):
     The new vertex is connected to the original vertices of the edge.
 
     The main logic involves:
+
     1. Identifying the half-edges associated with the edge.
+
     2. Inserting a new vertex at the midpoint of the edge.
+
     3. Creating new half-edges and updating the mesh topology.
 
     Parameters
@@ -4295,6 +4508,7 @@ def split_edge(self, edge_index):
     See Also
     --------
     flip_edge : Flips an edge by swapping its adjacent faces.
+
     collapse_edge : Collapses an edge into a single vertex.
     """
     h = self.edge_halfedge(edge_index)
@@ -4312,8 +4526,11 @@ def collapse_edge(self, edge_index):
     The resulting vertex replaces the original vertices in the mesh topology.
 
     The main logic involves:
+
     1. Identifying the half-edges associated with the edge.
+
     2. Merging the two vertices of the edge into a single vertex.
+
     3. Updating the half-edge structure to maintain mesh consistency.
 
     Parameters
@@ -4334,6 +4551,7 @@ def collapse_edge(self, edge_index):
     See Also
     --------
     split_edge : Splits an edge into two edges.
+
     flip_edge : Flips an edge by swapping its adjacent faces.
     """
     h = self.edge_halfedge(edge_index)
@@ -4356,8 +4574,11 @@ def equalize_valences(self):
     The goal is to achieve a more uniform vertex valence distribution.
 
     The main logic involves:
+
     1. Iterating over all edges and checking their valences.
+
     2. Performing edge flips, splits, or collapses to balance valences.
+
     3. Repeating the process until the desired valence distribution is achieved.
 
     Parameters
@@ -4378,6 +4599,7 @@ def equalize_valences(self):
     See Also
     --------
     split_edges : Splits edges to achieve a desired maximum length.
+
     collapse_edges : Collapses edges to achieve a desired minimum length.
     """
     if not self.is_triangular_mesh():
@@ -4419,8 +4641,11 @@ def split_edges(self, max_length):
     these edges, and the mesh topology is updated accordingly.
 
     The main logic involves:
+
     1. Iterating over all edges and checking their lengths.
+
     2. Splitting edges that exceed the maximum length.
+
     3. Updating the mesh topology with new vertices and edges.
 
     Parameters
@@ -4441,6 +4666,7 @@ def split_edges(self, max_length):
     See Also
     --------
     collapse_edges : Collapses edges that are shorter than a specified minimum length.
+    
     equalize_valences : Balances vertex valences in the mesh.
     """
     if not self.is_triangular_mesh():
@@ -4463,8 +4689,11 @@ def collapse_edges(self, min_length):
     into a single vertex, and the mesh topology is updated accordingly.
 
     The main logic involves:
+
     1. Iterating over all edges and checking their lengths.
+
     2. Collapsing edges that are shorter than the minimum length.
+
     3. Updating the mesh topology with merged vertices.
 
     Parameters
@@ -4485,6 +4714,7 @@ def collapse_edges(self, min_length):
     See Also
     --------
     split_edges : Splits edges that exceed a specified maximum length.
+
     equalize_valences : Balances vertex valences in the mesh.
     """
     if not self.is_triangular_mesh():
@@ -4542,7 +4772,9 @@ def vertex_halfedge(self, vertex_index):
     The returned half-edge can be used to traverse the mesh topology.
 
     The main logic involves:
+
     1. Searching for a half-edge that originates from the specified vertex.
+
     2. Returning the index of the found half-edge.
 
     Parameters
@@ -4563,6 +4795,7 @@ def vertex_halfedge(self, vertex_index):
     See Also
     --------
     halfedge_ring : Retrieves the half-edge ring around a specified half-edge.
+    
     vertex_ring_vertices : Retrieves the vertices in the vertex ring around a specified vertex.
     """
     H = self.halfedges
@@ -4577,8 +4810,11 @@ def halfedge_ring(self, halfedge_index):
     specified half-edge. The half-edge ring can be used to traverse the mesh topology.
 
     The main logic involves:
+    
     1. Starting from the specified half-edge.
+
     2. Iteratively following the next half-edge in the loop until the starting half-edge is reached.
+    
     3. Returning the sequence of half-edges in the loop.
 
     Parameters
@@ -4599,6 +4835,7 @@ def halfedge_ring(self, halfedge_index):
     See Also
     --------
     vertex_halfedge : Retrieves a half-edge originating from a specified vertex.
+    
     halfedge_ring_vertices : Retrieves the vertices in the half-edge ring.
     """
     H = self.halfedges
@@ -4618,8 +4855,11 @@ def vertex_ring_vertices(self, vertex_index):
     the specified vertex. The vertex ring can be used to traverse the mesh topology.
 
     The main logic involves:
+
     1. Starting from a half-edge originating from the specified vertex.
+    
     2. Iteratively following the next half-edge in the loop to collect adjacent vertices.
+    
     3. Returning the sequence of vertices in the vertex ring.
 
     Parameters
@@ -4640,6 +4880,7 @@ def vertex_ring_vertices(self, vertex_index):
     See Also
     --------
     vertex_halfedge : Retrieves a half-edge originating from a specified vertex.
+    
     halfedge_ring : Retrieves the half-edge ring around a specified half-edge.
     """
     h = self.vertex_halfedge(vertex_index)
@@ -4655,8 +4896,11 @@ def vertex_multiple_ring_vertices(self, vertex_index, depth=1):
     includes the starting vertex and all vertices reachable within the given depth.
 
     The main logic involves:
+    
     1. Initializing a queue with the starting vertex.
+    
     2. Iteratively expanding the vertex ring up to the specified depth.
+   
     3. Collecting all visited vertices.
 
     Parameters
@@ -4679,7 +4923,8 @@ def vertex_multiple_ring_vertices(self, vertex_index, depth=1):
     See Also
     --------
     vertex_ring_vertices : Retrieves the vertices in the immediate vertex ring.
-    vertex_ring_expansion : Expands the vertex ring with optional callbacks.
+    
+    ertex_ring_expansion : Expands the vertex ring with optional callbacks.
     """
     vi, vj = self.vertex_ring_vertices_iterators()
     ring = np.array([], dtype='i')
@@ -4722,6 +4967,7 @@ def halfedge_ring_vertices(self, halfedge_index):
     See Also
     --------
     halfedge_ring : Retrieves the half-edge ring around a specified half-edge.
+    
     vertex_ring_vertices_iterators : Iterates over vertices in the vertex ring.
     """
     H = self.halfedges
@@ -4738,8 +4984,11 @@ def halfedge_ring_faces(self, halfedge_index):
     they appear around the ring.
 
     The main logic involves:
+    
     1. Starting from the specified half-edge.
+    
     2. Iteratively following the next half-edge in the ring to collect adjacent faces.
+    
     3. Returning the sequence of faces.
 
     Parameters
@@ -4760,6 +5009,7 @@ def halfedge_ring_faces(self, halfedge_index):
     See Also
     --------
     halfedge_ring : Retrieves the half-edge ring around a specified half-edge.
+    
     face_vertices_iterators : Iterates over vertices of all faces.
     """
     H = self.halfedges
@@ -4776,8 +5026,11 @@ def halfedge_face_vertices(self, halfedge_index):
     appear around the face.
 
     The main logic involves:
+
     1. Starting from the specified half-edge.
+
     2. Iteratively following the next half-edge in the face loop to collect vertices.
+    
     3. Returning the sequence of vertices.
 
     Parameters
@@ -4798,6 +5051,7 @@ def halfedge_face_vertices(self, halfedge_index):
     See Also
     --------
     halfedge_ring_vertices : Retrieves the vertices in the half-edge ring.
+    
     face_vertices_iterators : Iterates over vertices of all faces.
     """
     H = self.halfedges
@@ -4817,7 +5071,9 @@ def is_boundary_halfedge_ring(self, ring):
     mesh boundary. It returns True if the ring is on the boundary, False otherwise.
 
     The main logic involves:
+
     1. Iterating over the half-edge ring.
+
     2. Checking if any half-edge in the ring is a boundary half-edge.
 
     Parameters
@@ -4865,7 +5121,9 @@ def is_halfedge_bounding_tri_faces(self, halfedge_index):
     False otherwise.
 
     The main logic involves:
+
     1. Checking the face associated with the half-edge.
+
     2. Verifying if the face is triangular or a boundary face.
 
     Parameters
@@ -4913,7 +5171,9 @@ def halfedge_length(self, halfedge_index):
     vertices of the specified half-edge.
 
     The main logic involves:
+
     1. Retrieving the origin and destination vertices of the half-edge.
+    
     2. Computing the Euclidean distance between the two vertices.
 
     Parameters
