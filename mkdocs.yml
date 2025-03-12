@@ -56,9 +56,6 @@ plugins:
             show_root_heading: False
             show_source: False
             docstring_style: numpy
-          setup_commands:
-            - import sys
-            - sys.path.append('/Users/wanghui/Github/mkdocs-archgeo/src')
   # - bibtex:
   #     bib_file: assets/refs.bib
 
