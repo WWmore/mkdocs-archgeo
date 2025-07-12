@@ -15,7 +15,13 @@ ArchGeo is a Python library designed for processing manifold and orientable mesh
 - **Optimization Framework**: ArchGeo includes a robust optimization framework for solving geometry processing problems, making it a powerful tool for advanced geometric computing.
 - **Interactive Design**: The library is optimized for fast interactive design, allowing users to iteratively refine their models in real-time.
 
-The implementations of ArchGeo related to the paper ["Discrete Orthogonal Structures"](https://doi.org/10.1016/j.cag.2023.05.024). If you use this library in your projects, please cite the associated paper.
+
+We recommend checking out our [DOS](https://github.com/WWmore/DOS) project, which is associated with the published research paper ["Discrete Orthogonal Structures"](https://doi.org/10.1016/j.cag.2023.05.024). 
+This project highlights the capabilities of ArchGeo, and the current documentation explains the comprehensive implementations in more detail.
+
+The DOS project and the ArchGeo Dodumentation presents the related theory within discrete differential geometry and optimized implementations, including discrete developable surfaces, discrete minimal surfaces, discrete constant mean curvature surfaces, principal meshes, and principal stress meshes, based on the analysis and construction of discrete orthogonal quad meshes.
+
+More features of ArchGeo will be open-sourced soon. If you use this library in your projects, please cite the associated paper.
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
