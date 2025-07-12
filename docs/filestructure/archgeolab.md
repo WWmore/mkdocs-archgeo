@@ -27,9 +27,9 @@
 
 |  Files                         | Functions                                                             |
 | ------------------------------ | --------------------------------------------------------------------- |
-| `readfile_orthonet.py`         | read .obj files and open GUI window                                   |
-| `guidedprojection_orthonet.py` | plottings and algorithms settings between GUI window and optimization |
-| `opt_gui_orthonet.py`          | Guided Projection algorithm settings                                  |
+| `dos_1_readfile.py`         | read .obj files and open GUI window                                   |
+| `dos_2_gui.py` | plottings and algorithms settings between GUI window and optimization |
+| `dos_3_opt.py`          | Guided Projection algorithm settings                                  |
 
 
 ## archgeometry

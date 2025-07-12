@@ -1,8 +1,9 @@
 # Optimization
 
-ArchGeo provides an optimization framework to solve geometry processing problems.
+ArchGeo provides not only a GUI to visualize the 3D models, including point cloud, curves, surfaces, meshes and vector field, but also an optimization framework to solve geometry processing problems. 
+ArchGeo is a powerful tool to do interactive design.
 
-It utilizes a Gauss-Newton algorithm, so-called Guided Projection Algorithm as dissused in the paper ["Form-finding with polyhedral meshes made simple"](https://doi.org/10.1145/2601097.2601213), to produce constrained quadmesh models.
+It utilizes a Gauss-Newton algorithm, so-called Guided Projection Algorithm as dissused in the paper ["Form-finding with polyhedral meshes made simple"](https://doi.org/10.1145/2601097.2601213), to optimize and generate constrained quadmesh models.
 
 
 <details>
@@ -25,7 +26,8 @@ $$
 \varphi_i(X) = \frac{1}{2}X^T A_i X + b_i^T X +c_i = 0, i=1,\cdots,N,
 $$
 
-where $X$ is a vector including all variables.
+where $X$ is the vector of variables to be optimized. 
+This representation allows the algorithm to efficiently handle a wide range of geometric constraints, making it a powerful tool for geometry processing tasks.
 
 $X$ can be extended once more geometry constraints are added. 
 Additional variables as auxiliary variables may be added into $X$ when lowering higher order (more than quadratic) equations to at-most quadratic equations, which requires geometric understanding.
@@ -125,7 +127,7 @@ Suppose the number of all vertices is $|V|$ and the number of all quad faces is 
 
 There is enough degree of freedom left for any orthogonal network.
 Later, we will incorporate additional properties on the orthogonal net to create specialized curve networks.
-For instance, the minimum net is an orthogonal asymptotic net, also known as an orthogonal A-net, which requires the addition of vertex normals to the variable $X$ and an increased number ($N$) of hard constraints.
+For instance, the minimum net is an orthogonal asymptotic net, also known as an orthogonal A-net, which requires the addition of vertex normals to the variable $X$ and an increased number $N$ of hard constraints.
 
 
 ### Sparse matrix construction

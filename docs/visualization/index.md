@@ -1,6 +1,6 @@
 # Visualization
 
-ArchGeo provides an interactive design GUI environment, which is based on the Mayavi library. 
+ArchGeo provides an interactive design GUI environment, which is based on the Mayavi library, to visualize the 3D models, including point cloud, curves, surfaces, meshes and vector field.
 
 ![File](../assets/mayavi.png)
 
